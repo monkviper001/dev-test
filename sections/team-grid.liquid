@@ -1,0 +1,542 @@
+{%- liquid
+  assign section_id = 'TeamGrid-' | append: section.id
+  assign heading = section.settings.heading
+  assign heading_tag = section.settings.heading_tag
+  assign columns = section.settings.columns
+  assign columns_gap = section.settings.columns_gap
+-%}
+
+<team-grid>
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<section
+  id="{{ section_id }}"
+  class="team-grid section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
+  style="
+    --team-grid-columns: {{ columns }};
+    --team-grid-gap: {{ columns_gap }}px;
+    --team-grid-card-radius: {{ section.settings.card_border_radius }}px;
+    padding-block-start: {{ section.settings.padding-block-start }}px;
+    padding-block-end: {{ section.settings.padding-block-end }}px;
+  "
+>
+  {%- if heading != blank -%}
+    <{{ heading_tag }} class="team-grid__heading">
+      {{- heading | escape -}}
+    </{{ heading_tag }}>
+  {%- endif -%}
+
+  <div class="team-grid__masonry">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'team_member' -%}
+        <div
+          class="team-grid__card color-{{ section.settings.card_color_scheme }}"
+          {{ block.shopify_attributes }}
+        >
+          {%- if block.settings.photo != blank -%}
+            <div class="team-grid__photo-wrapper">
+              {{
+                block.settings.photo
+                | image_url: width: 800
+                | image_tag:
+                  class: 'team-grid__photo',
+                  sizes: '(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw',
+                  widths: '300, 400, 500, 600, 800',
+                  alt: block.settings.name
+              }}
+              {%- if block.settings.linkedin_url != blank or block.settings.twitter_url != blank -%}
+                <div class="team-grid__overlay" aria-hidden="true">
+                  <div class="team-grid__social-links">
+                    {%- if block.settings.linkedin_url != blank -%}
+                      <a
+                        href="{{ block.settings.linkedin_url }}"
+                        class="team-grid__social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="{{ block.settings.name | escape }} — {{ 'sections.team_grid.linkedin' | t }}"
+                      >
+                        <svg class="team-grid__social-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                          <path d="M5.77 3.25a1.52 1.52 0 1 1-3.04 0 1.52 1.52 0 0 1 3.04 0ZM2.88 6.25h2.75v9h-2.75v-9Zm4.4 0H9.9v1.23h.04a2.72 2.72 0 0 1 2.45-1.34c2.62 0 3.1 1.72 3.1 3.96v4.15h-2.74v-3.68c0-.88-.02-2-.1.23-2s-.89-1.22-1.78-1.22-1.76.55-1.76 1.34v3.56H7.28v-9Z"/>
+                        </svg>
+                      </a>
+                    {%- endif -%}
+                    {%- if block.settings.twitter_url != blank -%}
+                      <a
+                        href="{{ block.settings.twitter_url }}"
+                        class="team-grid__social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="{{ block.settings.name | escape }} — {{ 'sections.team_grid.twitter' | t }}"
+                      >
+                        <svg class="team-grid__social-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                          <path d="M11.47 8.68 17.15 2h-1.35l-4.93 5.8L7.12 2H2.4l5.96 8.78L2.4 18h1.35l5.21-6.13L13 18h4.72l-6.18-9.32h-.07Zm-1.84 2.17-.6-.88L4.2 3.12h2.08l3.88 5.62.6.87 5.05 7.31h-2.07l-4.12-5.96v-.01Z"/>
+                        </svg>
+                      </a>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          <div class="team-grid__info">
+            {%- if block.settings.name != blank -%}
+              <h3 class="team-grid__name">{{ block.settings.name | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.role != blank -%}
+              <p class="team-grid__role">{{ block.settings.role | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.bio != blank -%}
+              <div class="team-grid__bio rte">{{ block.settings.bio }}</div>
+            {%- endif -%}
+          </div>
+
+          {%- if block.settings.linkedin_url != blank or block.settings.twitter_url != blank -%}
+            <div class="team-grid__social-links-mobile">
+              {%- if block.settings.linkedin_url != blank -%}
+                <a
+                  href="{{ block.settings.linkedin_url }}"
+                  class="team-grid__social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="{{ block.settings.name | escape }} — {{ 'sections.team_grid.linkedin' | t }}"
+                >
+                  <svg class="team-grid__social-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                    <path d="M5.77 3.25a1.52 1.52 0 1 1-3.04 0 1.52 1.52 0 0 1 3.04 0ZM2.88 6.25h2.75v9h-2.75v-9Zm4.4 0H9.9v1.23h.04a2.72 2.72 0 0 1 2.45-1.34c2.62 0 3.1 1.72 3.1 3.96v4.15h-2.74v-3.68c0-.88-.02-2-.1.23-2s-.89-1.22-1.78-1.22-1.76.55-1.76 1.34v3.56H7.28v-9Z"/>
+                  </svg>
+                </a>
+              {%- endif -%}
+              {%- if block.settings.twitter_url != blank -%}
+                <a
+                  href="{{ block.settings.twitter_url }}"
+                  class="team-grid__social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="{{ block.settings.name | escape }} — {{ 'sections.team_grid.twitter' | t }}"
+                >
+                  <svg class="team-grid__social-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                    <path d="M11.47 8.68 17.15 2h-1.35l-4.93 5.8L7.12 2H2.4l5.96 8.78L2.4 18h1.35l5.21-6.13L13 18h4.72l-6.18-9.32h-.07Zm-1.84 2.17-.6-.88L4.2 3.12h2.08l3.88 5.62.6.87 5.05 7.31h-2.07l-4.12-5.96v-.01Z"/>
+                  </svg>
+                </a>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+</team-grid>
+
+{% stylesheet %}
+  .team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xl);
+  }
+
+  .team-grid__heading {
+    text-align: center;
+    color: rgb(var(--color-foreground-heading));
+    margin: 0;
+  }
+
+  .team-grid__masonry {
+    columns: 1;
+    column-gap: var(--team-grid-gap);
+  }
+
+  @media screen and (min-width: 768px) {
+    .team-grid__masonry {
+      columns: max(2, calc(var(--team-grid-columns) - 1));
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .team-grid__masonry {
+      columns: var(--team-grid-columns);
+    }
+  }
+
+  .team-grid__card {
+    break-inside: avoid;
+    border-radius: var(--team-grid-card-radius);
+    overflow: hidden;
+    margin-block-end: var(--team-grid-gap);
+    display: flex;
+    flex-direction: column;
+    background: var(--color-background);
+  }
+
+  .team-grid__photo-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-grid__photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .team-grid__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-block-end: var(--padding-lg);
+    background: rgb(0 0 0 / 0);
+    transition: background var(--animation-speed-slow) var(--animation-easing);
+    pointer-events: none;
+  }
+
+  .team-grid__photo-wrapper:hover .team-grid__overlay,
+  .team-grid__card.is-touched .team-grid__overlay {
+    background: rgb(0 0 0 / 0.45);
+    pointer-events: auto;
+  }
+
+  .team-grid__social-links {
+    display: flex;
+    gap: var(--gap-sm);
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity var(--animation-speed-slow) var(--animation-easing),
+      transform var(--animation-speed-slow) var(--animation-easing);
+  }
+
+  .team-grid__photo-wrapper:hover .team-grid__social-links,
+  .team-grid__card.is-touched .team-grid__social-links {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .team-grid__social-links-mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    .team-grid__overlay {
+      display: none;
+    }
+
+    .team-grid__social-links-mobile {
+      display: flex;
+      gap: var(--gap-sm);
+      padding-inline: var(--padding-lg);
+      padding-block-end: var(--padding-lg);
+    }
+  }
+
+  .team-grid__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--minimum-touch-target);
+    height: var(--minimum-touch-target);
+    border-radius: 50%;
+    color: var(--color-background);
+    background: rgb(var(--color-foreground-rgb) / 0.8);
+    transition: background var(--animation-speed) var(--animation-easing);
+  }
+
+  .team-grid__social-link:hover {
+    background: rgb(var(--color-foreground));
+  }
+
+  .team-grid__social-links-mobile .team-grid__social-link {
+    color: rgb(var(--color-foreground));
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-10-25));
+  }
+
+  .team-grid__social-links-mobile .team-grid__social-link:hover {
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-35-55));
+  }
+
+  .team-grid__social-icon {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+  }
+
+  .team-grid__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xs);
+    padding: var(--padding-lg);
+  }
+
+  .team-grid__name {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight, 700);
+    font-size: var(--font-size--lg);
+    line-height: var(--line-height--heading-normal);
+    color: rgb(var(--color-foreground-heading));
+  }
+
+  .team-grid__role {
+    margin: 0;
+    font-size: var(--font-size--sm);
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-40-60));
+    line-height: var(--line-height--body-normal);
+  }
+
+  .team-grid__bio {
+    font-size: var(--font-size--sm);
+    line-height: var(--line-height--body-normal);
+    color: rgb(var(--color-foreground));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .team-grid__overlay,
+    .team-grid__social-links,
+    .team-grid__social-link {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  import { Component } from '@theme/component';
+
+  class TeamGrid extends Component {
+    connectedCallback() {
+      super.connectedCallback();
+      this.#bindTouchEvents();
+    }
+
+    #bindTouchEvents() {
+      /** @type {NodeListOf<HTMLElement>} */
+      const cards = this.querySelectorAll('.team-grid__card');
+
+      cards.forEach((card) => {
+        card.addEventListener('touchstart', this.#handleTouch.bind(this), { passive: true });
+      });
+
+      document.addEventListener('touchstart', this.#handleDocumentTouch.bind(this), { passive: true });
+    }
+
+    /**
+     * @param {TouchEvent} event
+     */
+    #handleTouch(event) {
+      const card = event.currentTarget;
+      const wasActive = card.classList.contains('is-touched');
+
+      this.querySelectorAll('.team-grid__card.is-touched').forEach((el) => {
+        el.classList.remove('is-touched');
+      });
+
+      if (!wasActive) {
+        card.classList.add('is-touched');
+      }
+    }
+
+    /**
+     * @param {TouchEvent} event
+     */
+    #handleDocumentTouch(event) {
+      if (!this.contains(event.target)) {
+        this.querySelectorAll('.team-grid__card.is-touched').forEach((el) => {
+          el.classList.remove('is-touched');
+        });
+      }
+    }
+
+    disconnectedCallback() {
+      document.removeEventListener('touchstart', this.#handleDocumentTouch);
+      super.disconnectedCallback();
+    }
+  }
+
+  customElements.define('team-grid', TeamGrid);
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:names.team_grid",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "t:sections.team_grid.defaults.heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "t:settings.heading_tag",
+      "options": [
+        { "value": "h2", "label": "t:options.h2" },
+        { "value": "h3", "label": "t:options.h3" },
+        { "value": "h4", "label": "t:options.h4" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "t:settings.columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_gap",
+      "label": "t:settings.horizontal_gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        { "value": "page-width", "label": "t:options.page" },
+        { "value": "full-width", "label": "t:options.full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "card_color_scheme",
+      "label": "t:sections.team_grid.settings.card_color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "team_member",
+      "name": "t:names.team_member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "t:sections.team_grid.blocks.team_member.photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "t:sections.team_grid.blocks.team_member.name",
+          "default": "Team member"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "t:sections.team_grid.blocks.team_member.role",
+          "default": "Job title"
+        },
+        {
+          "type": "richtext",
+          "id": "bio",
+          "label": "t:sections.team_grid.blocks.team_member.bio"
+        },
+        {
+          "type": "url",
+          "id": "linkedin_url",
+          "label": "t:options.linkedin"
+        },
+        {
+          "type": "url",
+          "id": "twitter_url",
+          "label": "t:options.twitter"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.team_grid",
+      "category": "t:categories.storytelling",
+      "settings": {
+        "columns": 3,
+        "columns_gap": 16,
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      },
+      "blocks": [
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Team member",
+            "role": "Job title",
+            "bio": "<p>A short bio about this team member and their role in the company.</p>"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Team member",
+            "role": "Job title",
+            "bio": "<p>A short bio about this team member and their role in the company.</p>"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Team member",
+            "role": "Job title",
+            "bio": "<p>A short bio about this team member and their role in the company.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

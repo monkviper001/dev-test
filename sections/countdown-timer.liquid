@@ -1,0 +1,424 @@
+{%- liquid
+  assign section_id = 'CountdownTimer-' | append: section.id
+  assign target_date = section.settings.target_date
+  assign hide_when_expired = section.settings.hide_when_expired
+-%}
+
+{%- capture children -%}
+  {%- content_for 'blocks' -%}
+{%- endcapture -%}
+
+<countdown-timer
+  data-target-date="{{ target_date }}"
+  {% if hide_when_expired %}data-hide-when-expired{% endif %}
+>
+  <div class="section-background color-{{ section.settings.color_scheme }}"></div>
+  <section
+    id="{{ section_id }}"
+    class="countdown-timer section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
+    style="
+      --countdown-direction: {{ section.settings.content_direction }};
+      --countdown-gap: {{ section.settings.gap }}px;
+      --countdown-halign: {{ section.settings.horizontal_alignment }};
+      --countdown-valign: {{ section.settings.vertical_alignment }};
+      padding-block-start: {{ section.settings.padding-block-start }}px;
+      padding-block-end: {{ section.settings.padding-block-end }}px;
+    "
+  >
+    {{ children }}
+
+    <div class="countdown-timer__display" ref="display" aria-live="polite" aria-atomic="true">
+      <div class="countdown-timer__unit">
+        <span class="countdown-timer__value" ref="days">--</span>
+        <span class="countdown-timer__label">{{ section.settings.date_label | escape }}</span>
+      </div>
+      <div class="countdown-timer__separator" aria-hidden="true">:</div>
+      <div class="countdown-timer__unit">
+        <span class="countdown-timer__value" ref="hours">--</span>
+        <span class="countdown-timer__label">{{ section.settings.hours_label | escape }}</span>
+      </div>
+      <div class="countdown-timer__separator" aria-hidden="true">:</div>
+      <div class="countdown-timer__unit">
+        <span class="countdown-timer__value" ref="minutes">--</span>
+        <span class="countdown-timer__label">{{ section.settings.minutes_label | escape }}</span>
+      </div>
+      <div class="countdown-timer__separator" aria-hidden="true">:</div>
+      <div class="countdown-timer__unit">
+        <span class="countdown-timer__value" ref="seconds">--</span>
+        <span class="countdown-timer__label">{{ section.settings.seconds_label | escape }}</span>
+      </div>
+    </div>
+
+    <p class="countdown-timer__expired" ref="expiredMessage" hidden>
+      {{ section.settings.expired_message | escape }}
+    </p>
+  </section>
+</countdown-timer>
+
+{% stylesheet %}
+  countdown-timer {
+    display: block;
+    position: relative;
+  }
+
+  .countdown-timer {
+    display: flex;
+    flex-direction: var(--countdown-direction, column);
+    align-items: var(--countdown-halign, center);
+    justify-content: var(--countdown-valign, center);
+    gap: var(--countdown-gap, 12px);
+  }
+
+  .countdown-timer__display {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .countdown-timer__unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-2xs);
+    min-width: 4rem;
+    padding: var(--padding-sm) var(--padding-lg);
+    border-radius: var(--style-border-radius-sm);
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-5-15));
+  }
+
+  .countdown-timer__value {
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight, 700);
+    font-size: var(--font-size--3xl);
+    line-height: var(--line-height--display-tight);
+    color: var(--color-foreground-heading);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .countdown-timer__label {
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--xs);
+    line-height: var(--line-height--body-normal);
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-40-60));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .countdown-timer__separator {
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight, 700);
+    font-size: var(--font-size--2xl);
+    line-height: var(--line-height--display-tight);
+    color: var(--color-foreground-heading);
+    padding-block-end: var(--padding-xl);
+  }
+
+  .countdown-timer__expired {
+    font-family: var(--font-heading--family);
+    font-size: var(--font-size--lg);
+    line-height: var(--line-height--heading-normal);
+    color: var(--color-foreground-heading);
+    text-align: center;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .countdown-timer__unit {
+      min-width: 5.5rem;
+      padding: var(--padding-lg) var(--padding-xl);
+    }
+
+    .countdown-timer__value {
+      font-size: var(--font-size--4xl);
+    }
+
+    .countdown-timer__separator {
+      font-size: var(--font-size--3xl);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .countdown-timer__value {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  import { Component } from '@theme/component';
+
+  class CountdownTimer extends Component {
+    #intervalId = null;
+
+    connectedCallback() {
+      super.connectedCallback();
+      this.#startCountdown();
+    }
+
+    disconnectedCallback() {
+      super.disconnectedCallback();
+      this.#stopCountdown();
+    }
+
+    #startCountdown() {
+      this.#update();
+      this.#intervalId = setInterval(() => this.#update(), 1000);
+    }
+
+    #stopCountdown() {
+      if (this.#intervalId) {
+        clearInterval(this.#intervalId);
+        this.#intervalId = null;
+      }
+    }
+
+    #update() {
+      const targetDate = this.dataset.targetDate;
+      if (!targetDate) return;
+
+      const target = new Date(targetDate).getTime();
+      const now = Date.now();
+      const diff = target - now;
+
+      if (diff <= 0) {
+        this.#handleExpired();
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      this.refs.days.textContent = String(days).padStart(2, '0');
+      this.refs.hours.textContent = String(hours).padStart(2, '0');
+      this.refs.minutes.textContent = String(minutes).padStart(2, '0');
+      this.refs.seconds.textContent = String(seconds).padStart(2, '0');
+    }
+
+    #handleExpired() {
+      this.#stopCountdown();
+
+      if (this.refs.display) {
+        this.refs.display.hidden = true;
+      }
+
+      if (this.refs.expiredMessage) {
+        this.refs.expiredMessage.hidden = false;
+      }
+
+      if (this.hasAttribute('data-hide-when-expired')) {
+        this.hidden = true;
+      }
+    }
+  }
+
+  customElements.define('countdown-timer', CountdownTimer);
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:names.countdown_timer",
+  "tag": "div",
+  "class": "countdown-timer-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "target_date",
+      "label": "t:sections.countdown_timer.settings.target_date.label",
+      "info": "t:sections.countdown_timer.settings.target_date.info",
+      "default": "2026-12-31T23:59:59"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.countdown_timer.settings.header_labels"
+    },
+    {
+      "type": "text",
+      "id": "date_label",
+      "label": "t:sections.countdown_timer.settings.date_label.label",
+      "default": "Days"
+    },
+    {
+      "type": "text",
+      "id": "hours_label",
+      "label": "t:sections.countdown_timer.settings.hours_label.label",
+      "default": "Hours"
+    },
+    {
+      "type": "text",
+      "id": "minutes_label",
+      "label": "t:sections.countdown_timer.settings.minutes_label.label",
+      "default": "Minutes"
+    },
+    {
+      "type": "text",
+      "id": "seconds_label",
+      "label": "t:sections.countdown_timer.settings.seconds_label.label",
+      "default": "Seconds"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.countdown_timer.settings.header_expiration"
+    },
+    {
+      "type": "text",
+      "id": "expired_message",
+      "label": "t:sections.countdown_timer.settings.expired_message.label",
+      "default": "This offer has ended"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_when_expired",
+      "label": "t:sections.countdown_timer.settings.hide_when_expired.label",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:settings.layout"
+    },
+    {
+      "type": "select",
+      "id": "content_direction",
+      "label": "t:settings.direction",
+      "options": [
+        {
+          "value": "column",
+          "label": "t:options.vertical"
+        },
+        {
+          "value": "row",
+          "label": "t:options.horizontal"
+        }
+      ],
+      "default": "column"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "t:settings.position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.top"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:settings.spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.countdown_timer",
+      "category": "t:categories.promotional",
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment": "center",
+        "gap": 24
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "text": "<p>Limited time offer</p>",
+            "type_preset": "h2"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,173 @@
+{% doc %}
+  Testimonial Card Block
+
+  Renders a testimonial card with optional author image, name, star rating, and quote.
+  Designed to be used inside section blocks for testimonial/review sections.
+
+  @param {object} block_data - The block object with settings for image, author_name, rating, and quote
+
+  @example
+  Used as a block inside section.liquid:
+  {% content_for 'block', type: 'testimonial-card', id: 'testimonial-1' %}
+{% enddoc %}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign rating = block_settings.rating
+  assign star_count = 5
+-%}
+
+<article
+  class="testimonial-card"
+  {{ block.shopify_attributes }}
+>
+  {%- if rating > 0 -%}
+    <div class="testimonial-card__rating" role="img" aria-label="{{ 'blocks.testimonial_card.rating_label' | t: rating: rating, max: star_count }}">
+      {%- for i in (1..star_count) -%}
+        <svg
+          class="testimonial-card__star {% if i <= rating %}testimonial-card__star--filled{% endif %}"
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="M31.547 12a.848.848 0 00-.677-.577l-9.427-1.376-4.224-8.532a.847.847 0 00-1.516 0l-4.218 8.534-9.427 1.355a.847.847 0 00-.467 1.467l6.823 6.664-1.612 9.375a.847.847 0 001.23.893l8.428-4.434 8.432 4.432a.847.847 0 001.229-.894l-1.615-9.373 6.822-6.665a.845.845 0 00.214-.869z" />
+        </svg>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if block_settings.quote != blank -%}
+    <blockquote class="testimonial-card__quote">
+      {{ block_settings.quote | escape }}
+    </blockquote>
+  {%- endif -%}
+
+  {%- if block_settings.author_name != blank or block_settings.image != blank -%}
+    <footer class="testimonial-card__author">
+      {%- if block_settings.image != blank -%}
+        <div class="testimonial-card__avatar">
+          {{
+            block_settings.image
+            | image_url: width: 120
+            | image_tag:
+              width: 60,
+              widths: '60, 120',
+              height: 60,
+              class: 'testimonial-card__avatar-image',
+              sizes: '60px',
+              alt: block_settings.author_name | escape
+          }}
+        </div>
+      {%- endif -%}
+
+      {%- if block_settings.author_name != blank -%}
+        <cite class="testimonial-card__name">
+          {{ block_settings.author_name | escape }}
+        </cite>
+      {%- endif -%}
+    </footer>
+  {%- endif -%}
+</article>
+
+{% stylesheet %}
+  .testimonial-card {
+    --testimonial-card-star-size: 1rem;
+    --testimonial-card-avatar-size: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-sm);
+  }
+
+  .testimonial-card__rating {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-3xs);
+  }
+
+  .testimonial-card__star {
+    width: var(--testimonial-card-star-size);
+    height: var(--testimonial-card-star-size);
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-20));
+  }
+
+  .testimonial-card__star--filled {
+    fill: rgb(var(--color-foreground));
+  }
+
+  .testimonial-card__quote {
+    font-size: var(--font-body--size);
+    line-height: var(--font-body--line-height);
+    color: rgb(var(--color-foreground));
+    margin: 0;
+    padding: 0;
+  }
+
+  .testimonial-card__author {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    margin-block-start: var(--padding-2xs);
+  }
+
+  .testimonial-card__avatar {
+    width: var(--testimonial-card-avatar-size);
+    height: var(--testimonial-card-avatar-size);
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .testimonial-card__avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-card__name {
+    font-style: normal;
+    font-size: var(--font-body--size);
+    color: rgb(var(--color-foreground) / var(--opacity-subdued-text));
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.testimonial_card",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "t:settings.testimonial_card.author_name"
+    },
+    {
+      "type": "range",
+      "id": "rating",
+      "label": "t:settings.testimonial_card.rating",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "t:settings.testimonial_card.quote"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.testimonial_card",
+      "category": "t:categories.text"
+    }
+  ]
+}
+{% endschema %}
