@@ -1456,6 +1456,87 @@
         }
       }
     },
+    "media_with_content_gold_Lz8mX5": {
+      "type": "media-with-content",
+      "settings": {
+        "media_position": "left",
+        "media_width": "medium",
+        "media_height": "60svh",
+        "section_width": "full-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      },
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "space-between"
+          },
+          "blocks": {
+            "caption": {
+              "type": "text",
+              "settings": {
+                "text": "<p>NEW COLLECTION</p>",
+                "type_preset": "h6",
+                "case": "uppercase",
+                "letter_spacing": "normal",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left"
+              }
+            },
+            "main_group": {
+              "type": "group",
+              "settings": {
+                "height": "fit",
+                "gap": 16
+              },
+              "blocks": {
+                "heading": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<h2>The luxury of gold with the elegance of precious stones</h2>",
+                    "type_preset": "h2",
+                    "max_width": "narrow",
+                    "width": "100%",
+                    "alignment": "left"
+                  }
+                },
+                "body": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>The timeless beauty of gold meets the captivating allure of precious stones. Each piece in this exquisite collection is a testament to superior craftsmanship and luxurious design, meticulously crafted to adorn you with a touch of opulence.</p>",
+                    "max_width": "narrow",
+                    "type_preset": "rte",
+                    "width": "100%",
+                    "alignment": "left"
+                  }
+                }
+              },
+              "block_order": ["heading", "body"]
+            },
+            "button": {
+              "type": "button",
+              "settings": {
+                "label": "EXPLORE COLLECTION",
+                "link": "shopify://collections/all",
+                "style_class": "link",
+                "width": "fit-content"
+              }
+            }
+          },
+          "block_order": ["caption", "main_group", "button"]
+        }
+      }
+    },
     "projects_grid_Ab1cD2": {
       "type": "section",
       "blocks": {
@@ -1943,6 +2024,7 @@
     "product_list_best_sellers_Xk9mN2",
     "media_with_content_eD7mK9",
     "glass_pitcher_mWc4Tp",
+    "media_with_content_gold_Lz8mX5",
     "spectrum_of_style_Qs7vL2",
     "hero_our_story_aB3cD4",
     "team_grid_mT5nQ7",
