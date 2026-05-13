@@ -2016,6 +2016,60 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "physical_store_Xm5kL8": {
+      "type": "section",
+      "blocks": {
+        "group": {
+          "type": "group",
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "width": "custom"
+          },
+          "blocks": {
+            "heading": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>Visit us in our physical store</h3>",
+                "type_preset": "h3"
+              }
+            },
+            "body": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Our physical store is located in the Empire Plaza Mall, in the center of New York, and our friendly attendants are waiting to help you choose the perfect piece.</p>"
+              }
+            },
+            "button": {
+              "type": "button",
+              "settings": {
+                "label": "ACCESS THE MAP"
+              }
+            },
+            "address": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Empire Plaza Mall 123 Liberty Avenue New York, NY 10005</p>"
+              }
+            }
+          },
+          "block_order": ["heading", "body", "button", "address"]
+        },
+        "image": {
+          "type": "image",
+          "settings": {
+            "image_ratio": "landscape"
+          }
+        }
+      },
+      "block_order": ["group", "image"],
+      "settings": {
+        "content_direction": "row",
+        "gap": 32,
+        "padding-block-start": 40,
+        "padding-block-end": 40,
+        "color_scheme": "scheme-physical-store"
+      }
     }
   },
   "order": [
@@ -2032,6 +2086,7 @@
     "partner_logos_Kx7mR3",
     "shipping_returns_faq_Rx4mKe",
     "projects_grid_Ab1cD2",
-    "benefits_Bn2kP5"
+    "benefits_Bn2kP5",
+    "physical_store_Xm5kL8"
   ]
 }

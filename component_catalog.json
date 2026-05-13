@@ -3,14 +3,13 @@
     "name": "password-footer",
     "type": "section",
     "path": "sections/password-footer.liquid",
-    "capability": "Renders a footer section for the password/storefront lock page.",
+    "capability": "Renders a customizable footer for password-protected storefronts.",
     "keywords": [
       "password",
       "footer",
-      "storefront lock",
-      "coming soon",
-      "maintenance",
-      "color scheme"
+      "locked store",
+      "access control",
+      "branding"
     ],
     "settings": [
       {
@@ -22,14 +21,14 @@
     "name": "predictive-search",
     "type": "section",
     "path": "sections/predictive-search.liquid",
-    "capability": "Displays real-time search suggestions as the user types a query.",
+    "capability": "Displays real-time search suggestions as users type in search field.",
     "keywords": [
       "search",
-      "predictive",
       "autocomplete",
+      "predictive",
       "suggestions",
       "typeahead",
-      "instant search"
+      "instant results"
     ],
     "settings": [],
     "accepts": [
@@ -40,16 +39,15 @@
     "name": "slideshow",
     "type": "section",
     "path": "sections/slideshow.liquid",
-    "capability": "Renders a slideshow carousel with configurable slides, layout, and styling.",
+    "capability": "Renders a customizable carousel of slides with content and media.",
     "keywords": [
       "slideshow",
       "carousel",
       "slider",
-      "slides",
       "banner",
-      "hero",
-      "full frame",
-      "inset"
+      "rotation",
+      "gallery",
+      "hero slider"
     ],
     "settings": [
       {
@@ -110,14 +108,13 @@
     "name": "section-rendering-product-card",
     "type": "section",
     "path": "sections/section-rendering-product-card.liquid",
-    "capability": "Renders a single product card for use in section rendering contexts.",
+    "capability": "Displays a single product card with image, title, and pricing.",
     "keywords": [
-      "product card",
       "product",
       "card",
-      "render",
       "item",
-      "thumbnail"
+      "display",
+      "showcase"
     ],
     "settings": [
       {
@@ -129,15 +126,14 @@
     "name": "product-hotspots",
     "type": "section",
     "path": "sections/product-hotspots.liquid",
-    "capability": "Displays an image with interactive hotspot markers linking to products.",
+    "capability": "Overlays interactive clickable hotspots on product images.",
     "keywords": [
       "hotspots",
-      "shoppable image",
       "interactive",
-      "product pins",
-      "lookbook",
-      "image map",
-      "bullseye"
+      "product image",
+      "clickable",
+      "annotations",
+      "points of interest"
     ],
     "settings": [
       {
@@ -197,16 +193,15 @@
     "name": "featured-blog-posts",
     "type": "section",
     "path": "sections/featured-blog-posts.liquid",
-    "capability": "Showcases blog posts in carousel, grid, or editorial layouts.",
+    "capability": "Displays blog posts in grid, carousel, or editorial layout.",
     "keywords": [
       "blog",
       "posts",
       "articles",
-      "featured",
-      "carousel",
       "grid",
+      "carousel",
       "editorial",
-      "news"
+      "content feed"
     ],
     "settings": [
       {
@@ -273,15 +268,15 @@
     "name": "main-collection-list",
     "type": "section",
     "path": "sections/main-collection-list.liquid",
-    "capability": "Renders the main collection list page with grid, carousel, or bento layouts.",
+    "capability": "Renders a browsable grid or carousel of product collections.",
     "keywords": [
-      "collection list",
       "collections",
       "grid",
-      "bento",
       "carousel",
       "categories",
-      "browse"
+      "browse",
+      "layout",
+      "bento"
     ],
     "settings": [
       {
@@ -347,14 +342,13 @@
     "name": "search-header",
     "type": "section",
     "path": "sections/search-header.liquid",
-    "capability": "Displays a header section for the search results page.",
+    "capability": "Displays header section for search results page.",
     "keywords": [
       "search",
       "header",
-      "search page",
-      "title",
-      "alignment",
-      "results header"
+      "results",
+      "page title",
+      "query display"
     ],
     "settings": [
       {
@@ -375,14 +369,14 @@
     "name": "main-blog-post",
     "type": "section",
     "path": "sections/main-blog-post.liquid",
-    "capability": "Renders the main content area for an individual blog post page.",
+    "capability": "Renders full blog post content with formatting and metadata.",
     "keywords": [
-      "blog post",
-      "article",
       "blog",
-      "content",
       "post",
-      "reading"
+      "article",
+      "content",
+      "editorial",
+      "story"
     ],
     "settings": [
       {
@@ -406,18 +400,70 @@
       "@app"
     ]
   },
+  "team-grid": {
+    "name": "team-grid",
+    "type": "section",
+    "path": "sections/team-grid.liquid",
+    "capability": "Displays team members in a customizable grid layout.",
+    "keywords": [
+      "team",
+      "grid",
+      "staff",
+      "members",
+      "people",
+      "about us",
+      "cards"
+    ],
+    "settings": [
+      {
+        "id": "heading"
+      },
+      {
+        "id": "heading_tag"
+      },
+      {
+        "id": "columns"
+      },
+      {
+        "id": "columns_gap"
+      },
+      {
+        "id": "section_width"
+      },
+      {
+        "id": "color_scheme"
+      },
+      {
+        "id": "card_color_scheme"
+      },
+      {
+        "id": "card_border_radius"
+      },
+      {
+        "id": "padding-block-start"
+      },
+      {
+        "id": "padding-block-end"
+      }
+    ],
+    "accepts": [
+      "team_member"
+    ],
+    "presets": [
+      "t:names.team_grid"
+    ]
+  },
   "divider": {
     "name": "divider",
     "type": "section",
     "path": "sections/divider.liquid",
-    "capability": "Renders a horizontal divider line with customizable thickness and width.",
+    "capability": "Renders a horizontal line separator with customizable styling.",
     "keywords": [
       "divider",
       "separator",
       "line",
-      "horizontal rule",
-      "spacer",
-      "border"
+      "spacing",
+      "visual break"
     ],
     "settings": [
       {
@@ -453,14 +499,14 @@
     "name": "main-cart",
     "type": "section",
     "path": "sections/main-cart.liquid",
-    "capability": "Displays the main shopping cart page with cart contents and actions.",
+    "capability": "Displays shopping cart contents with line items and checkout.",
     "keywords": [
       "cart",
-      "shopping cart",
-      "bag",
+      "shopping",
       "checkout",
-      "order",
-      "items"
+      "items",
+      "bag",
+      "order"
     ],
     "settings": [
       {
@@ -492,15 +538,15 @@
     "name": "footer-utilities",
     "type": "section",
     "path": "sections/footer-utilities.liquid",
-    "capability": "Renders footer utility links including copyright, policies, and social links.",
+    "capability": "Renders footer section with policies, links, and social elements.",
     "keywords": [
       "footer",
-      "policies",
-      "copyright",
-      "social links",
-      "legal",
       "utilities",
-      "links"
+      "policies",
+      "links",
+      "copyright",
+      "social",
+      "bottom"
     ],
     "settings": [
       {
@@ -535,14 +581,14 @@
     "name": "logo",
     "type": "block",
     "path": "blocks/logo.liquid",
-    "capability": "Displays the store logo with responsive sizing in percentage or pixel units.",
+    "capability": "Brand logo display with customizable sizing, font, and responsive options.",
     "keywords": [
       "logo",
       "brand",
-      "identity",
-      "header",
       "image",
-      "store name",
+      "header",
+      "sizing",
+      "responsive",
       "branding"
     ],
     "settings": [
@@ -604,15 +650,14 @@
     "name": "collection-list",
     "type": "section",
     "path": "sections/collection-list.liquid",
-    "capability": "Displays collections in bento, grid, or carousel layouts.",
+    "capability": "Shows collections in grid, carousel, or bento layout.",
     "keywords": [
       "collections",
-      "collection list",
       "grid",
-      "bento",
       "carousel",
-      "categories",
-      "cards"
+      "bento",
+      "layout",
+      "categories"
     ],
     "settings": [
       {
@@ -690,14 +735,14 @@
     "name": "collection-links",
     "type": "section",
     "path": "sections/collection-links.liquid",
-    "capability": "Renders a list of collection links in spotlight or text layout styles.",
+    "capability": "Displays collection links with optional images and text.",
     "keywords": [
-      "collection links",
-      "navigation",
-      "spotlight",
-      "categories",
+      "collections",
       "links",
-      "collections"
+      "navigation",
+      "categories",
+      "spotlight",
+      "text"
     ],
     "settings": [
       {
@@ -734,15 +779,14 @@
     "name": "header-announcements",
     "type": "section",
     "path": "sections/header-announcements.liquid",
-    "capability": "Displays a scrolling announcement bar with multiple messages.",
+    "capability": "Renders scrolling announcement bar at top of page.",
     "keywords": [
-      "announcement",
+      "announcements",
       "banner",
-      "marquee",
+      "bar",
+      "message",
       "notification",
-      "header bar",
-      "promo",
-      "alert"
+      "marquee"
     ],
     "settings": [
       {
@@ -775,15 +819,14 @@
     "name": "_blocks",
     "type": "section",
     "path": "sections/_blocks.liquid",
-    "capability": "A flexible custom section container for arranging blocks in rows or columns.",
+    "capability": "Custom flexible container for composing multiple block types.",
     "keywords": [
-      "custom section",
       "blocks",
+      "custom",
       "layout",
       "container",
       "flexible",
-      "columns",
-      "rows"
+      "composition"
     ],
     "settings": [
       {
@@ -881,15 +924,14 @@
     "name": "layered-slideshow",
     "type": "section",
     "path": "sections/layered-slideshow.liquid",
-    "capability": "Renders a slideshow with layered, stacked slide transitions.",
+    "capability": "Displays slides with layered content and media elements.",
     "keywords": [
       "slideshow",
       "layered",
       "slides",
-      "stacked",
       "carousel",
-      "animation",
-      "transition"
+      "content layers",
+      "media"
     ],
     "settings": [
       {
@@ -928,15 +970,14 @@
     "name": "search-results",
     "type": "section",
     "path": "sections/search-results.liquid",
-    "capability": "Displays search results in a configurable product grid with pagination.",
+    "capability": "Renders product search results in grid with filtering.",
     "keywords": [
-      "search results",
       "search",
       "results",
-      "grid",
       "products",
+      "grid",
       "infinite scroll",
-      "filter"
+      "pagination"
     ],
     "settings": [
       {
@@ -987,15 +1028,15 @@
     "name": "header",
     "type": "section",
     "path": "sections/header.liquid",
-    "capability": "Renders the site header with logo, navigation, search, and account links.",
+    "capability": "Renders main navigation header with logo, menu, and search.",
     "keywords": [
       "header",
       "navigation",
       "menu",
-      "nav bar",
       "logo",
       "search",
-      "account"
+      "account",
+      "top bar"
     ],
     "settings": [
       {
@@ -1103,14 +1144,14 @@
     "name": "main-blog",
     "type": "section",
     "path": "sections/main-blog.liquid",
-    "capability": "Renders the main blog listing page with posts and content blocks.",
+    "capability": "Displays blog listing page with posts and navigation.",
     "keywords": [
       "blog",
-      "blog page",
-      "articles",
       "posts",
+      "articles",
       "listing",
-      "news"
+      "feed",
+      "content"
     ],
     "settings": [
       {
@@ -1140,14 +1181,14 @@
     "name": "main-page",
     "type": "section",
     "path": "sections/main-page.liquid",
-    "capability": "Renders the main content area for a standard Shopify page.",
+    "capability": "Renders custom page content with flexible block composition.",
     "keywords": [
       "page",
       "content",
-      "static page",
-      "about",
-      "information",
-      "custom page"
+      "custom",
+      "blocks",
+      "layout",
+      "flexible"
     ],
     "settings": [
       {
@@ -1176,15 +1217,14 @@
     "name": "custom-liquid",
     "type": "block",
     "path": "blocks/custom-liquid.liquid",
-    "capability": "Renders custom Liquid code for advanced template customization.",
+    "capability": "Renders custom Liquid code for advanced customization.",
     "keywords": [
       "custom",
       "liquid",
       "code",
-      "html",
-      "template",
       "advanced",
-      "snippet"
+      "developer",
+      "template"
     ],
     "settings": [
       {
@@ -1197,15 +1237,14 @@
     "name": "product-list",
     "type": "section",
     "path": "sections/product-list.liquid",
-    "capability": "Displays a curated product list in grid, carousel, or editorial layouts.",
+    "capability": "Displays products in grid, carousel, or editorial layout.",
     "keywords": [
       "products",
-      "product list",
       "grid",
       "carousel",
       "editorial",
-      "collection",
-      "cards"
+      "layout",
+      "collection"
     ],
     "settings": [
       {
@@ -1275,15 +1314,14 @@
     "name": "quick-order-list",
     "type": "section",
     "path": "sections/quick-order-list.liquid",
-    "capability": "Renders a bulk quick-order list for adding multiple product variants.",
+    "capability": "Renders bulk order form for quick product purchasing.",
     "keywords": [
       "quick order",
-      "bulk order",
-      "wholesale",
-      "variants",
-      "fast order",
+      "bulk",
+      "form",
+      "purchasing",
       "sku",
-      "quantity"
+      "variants"
     ],
     "settings": [
       {
@@ -1313,13 +1351,13 @@
     "name": "featured-product",
     "type": "section",
     "path": "sections/featured-product.liquid",
-    "capability": "Highlights a single featured product with customizable layout.",
+    "capability": "Highlights a single product with media and details.",
     "keywords": [
-      "featured product",
+      "featured",
       "product",
-      "highlight",
+      "spotlight",
+      "hero",
       "showcase",
-      "single product",
       "promotion"
     ],
     "settings": [
@@ -1347,15 +1385,14 @@
     "name": "featured-product-information",
     "type": "section",
     "path": "sections/featured-product-information.liquid",
-    "capability": "Displays detailed featured product info with media and description columns.",
+    "capability": "Displays detailed product information with customizable layout.",
     "keywords": [
-      "featured product",
-      "product information",
+      "product",
+      "information",
       "details",
-      "media",
+      "specs",
       "description",
-      "columns",
-      "gallery"
+      "featured"
     ],
     "settings": [
       {
@@ -1397,14 +1434,13 @@
     "name": "predictive-search-empty",
     "type": "section",
     "path": "sections/predictive-search-empty.liquid",
-    "capability": "Renders the empty state when predictive search returns no results.",
+    "capability": "Shows empty state message when no search results found.",
     "keywords": [
       "search",
       "empty",
       "no results",
-      "predictive",
-      "blank state",
-      "not found"
+      "message",
+      "fallback"
     ],
     "settings": []
   },
@@ -1412,16 +1448,14 @@
     "name": "product-information",
     "type": "section",
     "path": "sections/product-information.liquid",
-    "capability": "Renders the main product detail section with media and purchase options.",
+    "capability": "Renders product details, options, and add-to-cart button.",
     "keywords": [
       "product",
-      "product page",
-      "product details",
-      "media",
-      "buy",
+      "information",
+      "details",
+      "options",
       "add to cart",
-      "sticky",
-      "gallery"
+      "purchase"
     ],
     "settings": [
       {
@@ -1460,14 +1494,14 @@
     "name": "password",
     "type": "section",
     "path": "sections/password.liquid",
-    "capability": "Renders the password page content layout for storefront lock screens.",
+    "capability": "Renders password-protected store access page.",
     "keywords": [
       "password",
-      "lock",
-      "coming soon",
-      "maintenance",
-      "storefront",
-      "access"
+      "access",
+      "locked",
+      "authentication",
+      "login",
+      "protection"
     ],
     "settings": [
       {
@@ -1544,15 +1578,15 @@
     "name": "media-with-content",
     "type": "section",
     "path": "sections/media-with-content.liquid",
-    "capability": "Displays media alongside text content in a split editorial layout.",
+    "capability": "Displays media alongside text content in editorial layout.",
     "keywords": [
       "media",
-      "editorial",
-      "image with text",
-      "split",
       "content",
-      "side by side",
-      "jumbo text"
+      "editorial",
+      "image",
+      "text",
+      "layout",
+      "side-by-side"
     ],
     "settings": [
       {
@@ -1589,14 +1623,14 @@
     "name": "footer",
     "type": "section",
     "path": "sections/footer.liquid",
-    "capability": "Renders the main site footer with navigation groups and links.",
+    "capability": "Renders main footer with links, content, and social elements.",
     "keywords": [
       "footer",
-      "site footer",
-      "navigation",
+      "bottom",
       "links",
-      "follow on shop",
-      "bottom"
+      "content",
+      "social",
+      "information"
     ],
     "settings": [
       {
@@ -1639,15 +1673,14 @@
     "name": "carousel",
     "type": "section",
     "path": "sections/carousel.liquid",
-    "capability": "Renders a generic multi-column carousel with navigation controls.",
+    "capability": "Displays items in a scrollable carousel with columns.",
     "keywords": [
       "carousel",
       "slider",
       "scroll",
-      "columns",
-      "cards",
-      "navigation",
-      "swipe"
+      "items",
+      "rotation",
+      "horizontal"
     ],
     "settings": [
       {
@@ -1686,14 +1719,14 @@
     "name": "main-404",
     "type": "section",
     "path": "sections/main-404.liquid",
-    "capability": "Renders the 404 not-found error page with customizable content.",
+    "capability": "Renders custom 404 error page with navigation options.",
     "keywords": [
       "404",
-      "not found",
       "error",
-      "missing page",
-      "page not found",
-      "broken link"
+      "not found",
+      "page",
+      "missing",
+      "recovery"
     ],
     "settings": [
       {
@@ -1734,15 +1767,14 @@
     "name": "main-collection",
     "type": "section",
     "path": "sections/main-collection.liquid",
-    "capability": "Renders the main collection page with product grid and filtering.",
+    "capability": "Displays collection products with filtering and sorting.",
     "keywords": [
       "collection",
-      "product grid",
-      "catalog",
+      "products",
+      "grid",
       "filter",
       "sort",
-      "products",
-      "infinite scroll"
+      "browse"
     ],
     "settings": [
       {
@@ -1793,16 +1825,15 @@
     "name": "hero",
     "type": "section",
     "path": "sections/hero.liquid",
-    "capability": "Displays a hero banner with image or video media and overlay content.",
+    "capability": "Renders full-width hero section with media and content.",
     "keywords": [
       "hero",
       "banner",
-      "header image",
+      "media",
+      "image",
       "video",
-      "marquee",
-      "landing",
-      "above the fold",
-      "jumbotron"
+      "full-width",
+      "landing"
     ],
     "settings": [
       {
@@ -1934,15 +1965,14 @@
     "name": "marquee",
     "type": "section",
     "path": "sections/marquee.liquid",
-    "capability": "Renders a continuously scrolling marquee of text, icons, or logos.",
+    "capability": "Displays scrolling text or elements in continuous loop.",
     "keywords": [
       "marquee",
-      "scrolling text",
-      "ticker",
-      "banner",
-      "loop",
+      "scroll",
+      "text",
       "animation",
-      "logos"
+      "loop",
+      "movement"
     ],
     "settings": [
       {
@@ -1975,16 +2005,16 @@
     "name": "product-recommendations",
     "type": "block",
     "path": "blocks/product-recommendations.liquid",
-    "capability": "Shows recommended or related products in a grid or carousel layout.",
+    "capability": "Shows recommended products in carousel or grid layout with customizable columns and spacing.",
     "keywords": [
       "recommendations",
-      "related products",
-      "upsell",
+      "products",
       "carousel",
+      "grid",
+      "layout",
+      "related",
       "suggested",
-      "you may also like",
-      "cross-sell",
-      "grid"
+      "columns"
     ],
     "settings": [
       {
@@ -2057,20 +2087,89 @@
       "@app"
     ]
   },
+  "countdown-timer": {
+    "name": "countdown-timer",
+    "type": "section",
+    "path": "sections/countdown-timer.liquid",
+    "capability": "Displays countdown timer to specific date and time.",
+    "keywords": [
+      "countdown",
+      "timer",
+      "deadline",
+      "urgency",
+      "sale",
+      "event",
+      "time"
+    ],
+    "settings": [
+      {
+        "id": "target_date"
+      },
+      {
+        "id": "date_label"
+      },
+      {
+        "id": "hours_label"
+      },
+      {
+        "id": "minutes_label"
+      },
+      {
+        "id": "seconds_label"
+      },
+      {
+        "id": "expired_message"
+      },
+      {
+        "id": "hide_when_expired"
+      },
+      {
+        "id": "content_direction"
+      },
+      {
+        "id": "horizontal_alignment"
+      },
+      {
+        "id": "vertical_alignment"
+      },
+      {
+        "id": "gap"
+      },
+      {
+        "id": "section_width"
+      },
+      {
+        "id": "color_scheme"
+      },
+      {
+        "id": "padding-block-start"
+      },
+      {
+        "id": "padding-block-end"
+      }
+    ],
+    "accepts": [
+      "@theme",
+      "@app"
+    ],
+    "presets": [
+      "t:names.countdown_timer"
+    ]
+  },
   "section": {
     "name": "section",
     "type": "section",
     "path": "sections/section.liquid",
-    "capability": "A versatile custom section for rich text, FAQs, or flexible content.",
+    "capability": "Flexible container that arranges content with customizable alignment, spacing, and layout direction.",
     "keywords": [
-      "custom section",
-      "rich text",
-      "faq",
-      "flexible",
-      "content",
+      "section",
+      "container",
       "layout",
-      "blocks",
-      "accordion"
+      "grid",
+      "columns",
+      "spacing",
+      "alignment",
+      "wrapper"
     ],
     "settings": [
       {
@@ -2158,7 +2257,9 @@
     "accepts": [
       "@theme",
       "@app",
-      "_divider"
+      "_divider",
+      "testimonial-card",
+      "project-card"
     ],
     "presets": [
       "t:names.custom_section",
@@ -2173,22 +2274,22 @@
       "t:names.image_with_text",
       "t:names.multicolumn",
       "t:names.image_compare",
-      "t:names.large_logo"
+      "t:names.large_logo",
+      "t:names.projects_grid"
     ]
   },
   "_social-link": {
     "name": "_social-link",
     "type": "block",
     "path": "blocks/_social-link.liquid",
-    "capability": "Renders a single social media link icon block.",
+    "capability": "Individual social media link block for use within social link collections.",
     "keywords": [
       "social",
-      "social media",
       "link",
+      "social media",
       "follow",
       "connect",
-      "icon",
-      "profile"
+      "url"
     ],
     "settings": [
       {
@@ -2201,15 +2302,15 @@
     "name": "_blog-post-image",
     "type": "block",
     "path": "blocks/_blog-post-image.liquid",
-    "capability": "Displays a blog post's featured image with configurable height and border styling.",
+    "capability": "Blog post image block with customizable height, borders, and rounded corners.",
     "keywords": [
       "blog",
-      "post",
       "image",
-      "featured image",
-      "article",
-      "thumbnail",
-      "border"
+      "post",
+      "photo",
+      "border",
+      "radius",
+      "featured image"
     ],
     "settings": [
       {
@@ -2238,15 +2339,15 @@
     "name": "_carousel-content",
     "type": "block",
     "path": "blocks/_carousel-content.liquid",
-    "capability": "Wraps card blocks in a carousel layout with positioning and color scheme options.",
+    "capability": "Carousel container that displays cards in a scrollable horizontal layout with styling options.",
     "keywords": [
       "carousel",
       "slider",
-      "slideshow",
+      "scroll",
       "cards",
-      "content",
-      "rotating",
-      "scroll"
+      "rotation",
+      "swipe",
+      "horizontal"
     ],
     "settings": [
       {
@@ -2306,15 +2407,15 @@
     "name": "_product-list-button",
     "type": "block",
     "path": "blocks/_product-list-button.liquid",
-    "capability": "Renders a configurable button within a product list with responsive width options.",
+    "capability": "Customizable button for product lists with adjustable width and styling options.",
     "keywords": [
       "button",
-      "product list",
+      "product",
+      "list",
       "cta",
-      "link",
       "action",
-      "shop",
-      "click"
+      "click",
+      "link"
     ],
     "settings": [
       {
@@ -2351,15 +2452,14 @@
     "name": "_cart-summary",
     "type": "block",
     "path": "blocks/_cart-summary.liquid",
-    "capability": "Displays a cart summary block with totals, color scheme, and border styling.",
+    "capability": "Displays cart totals and summary information with optional extended details.",
     "keywords": [
       "cart",
       "summary",
-      "totals",
+      "total",
       "checkout",
       "order",
-      "subtotal",
-      "basket"
+      "pricing"
     ],
     "settings": [
       {
@@ -2396,15 +2496,15 @@
     "name": "_product-card-gallery",
     "type": "block",
     "path": "blocks/_product-card-gallery.liquid",
-    "capability": "Renders a product card image gallery with aspect ratio and border controls.",
+    "capability": "Product image gallery with customizable aspect ratio, borders, and padding.",
     "keywords": [
       "product",
-      "card",
       "gallery",
       "images",
+      "card",
       "grid",
-      "thumbnail",
-      "catalog"
+      "photos",
+      "showcase"
     ],
     "settings": [
       {
@@ -2449,15 +2549,15 @@
     "name": "email-signup",
     "type": "block",
     "path": "blocks/email-signup.liquid",
-    "capability": "Renders an email subscription form with customizable input styling and heading.",
+    "capability": "Email subscription form with customizable heading, input styling, and border options.",
     "keywords": [
       "email",
       "signup",
       "newsletter",
       "subscribe",
-      "mailing list",
+      "form",
       "input",
-      "form"
+      "capture"
     ],
     "settings": [
       {
@@ -2542,15 +2642,15 @@
     "name": "_featured-blog-posts-title",
     "type": "block",
     "path": "blocks/_featured-blog-posts-title.liquid",
-    "capability": "Displays a styled title heading for a featured blog posts section.",
+    "capability": "Rich text title for featured blog posts with typography and alignment controls.",
     "keywords": [
-      "blog",
       "title",
       "heading",
-      "featured",
-      "posts",
+      "blog",
       "text",
-      "typography"
+      "typography",
+      "featured",
+      "posts"
     ],
     "settings": [
       {
@@ -2631,18 +2731,51 @@
       }
     ]
   },
+  "testimonial-card": {
+    "name": "testimonial-card",
+    "type": "block",
+    "path": "blocks/testimonial-card.liquid",
+    "capability": "Displays customer testimonial with author image, name, rating, and quote text.",
+    "keywords": [
+      "testimonial",
+      "review",
+      "quote",
+      "customer",
+      "rating",
+      "feedback",
+      "card"
+    ],
+    "settings": [
+      {
+        "id": "image",
+        "type": "image_picker"
+      },
+      {
+        "id": "author_name",
+        "type": "text"
+      },
+      {
+        "id": "rating",
+        "type": "range"
+      },
+      {
+        "id": "quote",
+        "type": "textarea"
+      }
+    ]
+  },
   "_divider": {
     "name": "_divider",
     "type": "block",
     "path": "blocks/_divider.liquid",
-    "capability": "Renders a horizontal divider line with adjustable thickness and width.",
+    "capability": "Horizontal line separator with customizable thickness, radius, and spacing.",
     "keywords": [
       "divider",
-      "separator",
       "line",
-      "horizontal rule",
-      "spacer",
-      "break"
+      "separator",
+      "border",
+      "horizontal",
+      "spacing"
     ],
     "settings": [
       {
@@ -2671,15 +2804,15 @@
     "name": "_collection-card",
     "type": "block",
     "path": "blocks/_collection-card.liquid",
-    "capability": "Displays a dynamic collection card layout accepting text, buttons, and titles.",
+    "capability": "Flexible collection card container with alignment, spacing, and color scheme options.",
     "keywords": [
       "collection",
       "card",
-      "category",
-      "layout",
       "grid",
-      "group",
-      "dynamic"
+      "layout",
+      "products",
+      "category",
+      "container"
     ],
     "settings": [
       {
@@ -2731,19 +2864,56 @@
       "collection-title"
     ]
   },
+  "project-card": {
+    "name": "project-card",
+    "type": "block",
+    "path": "blocks/project-card.liquid",
+    "capability": "Project showcase card with image, title, link, and customizable overlay opacity.",
+    "keywords": [
+      "project",
+      "card",
+      "portfolio",
+      "image",
+      "overlay",
+      "link",
+      "showcase"
+    ],
+    "settings": [
+      {
+        "id": "image",
+        "type": "image_picker"
+      },
+      {
+        "id": "title",
+        "type": "text"
+      },
+      {
+        "id": "link",
+        "type": "url"
+      },
+      {
+        "id": "image_ratio",
+        "type": "select"
+      },
+      {
+        "id": "overlay_opacity",
+        "type": "range"
+      }
+    ]
+  },
   "collection-card": {
     "name": "collection-card",
     "type": "block",
     "path": "blocks/collection-card.liquid",
-    "capability": "Renders a specific collection card with linked collection and content blocks.",
+    "capability": "Collection display card with product grid, alignment controls, and styling options.",
     "keywords": [
       "collection",
       "card",
-      "category",
-      "link",
-      "shop",
+      "products",
       "grid",
-      "browse"
+      "category",
+      "layout",
+      "showcase"
     ],
     "settings": [
       {
@@ -2803,15 +2973,14 @@
     "name": "video",
     "type": "block",
     "path": "blocks/video.liquid",
-    "capability": "Embeds a video from file upload or URL with autoplay and cover image options.",
+    "capability": "Embeds video content from URL or file with autoplay, loop, and aspect ratio controls.",
     "keywords": [
       "video",
-      "media",
       "embed",
-      "youtube",
-      "vimeo",
-      "autoplay",
+      "media",
       "player",
+      "youtube",
+      "autoplay",
       "loop"
     ],
     "settings": [
@@ -2893,7 +3062,7 @@
     "name": "_blog-post-info-text",
     "type": "block",
     "path": "blocks/_blog-post-info-text.liquid",
-    "capability": "Shows blog post metadata like date and author with alignment controls.",
+    "capability": "Displays blog post metadata including date and author with alignment options.",
     "keywords": [
       "blog",
       "post",
@@ -2901,7 +3070,7 @@
       "author",
       "metadata",
       "info",
-      "article"
+      "text"
     ],
     "settings": [
       {
@@ -2938,15 +3107,15 @@
     "name": "popup-link",
     "type": "block",
     "path": "blocks/popup-link.liquid",
-    "capability": "Creates a clickable link that opens content in a popup or modal overlay.",
+    "capability": "Trigger link that opens a popup modal with customizable heading and padding.",
     "keywords": [
       "popup",
       "modal",
       "link",
-      "overlay",
+      "trigger",
       "dialog",
-      "lightbox",
-      "click"
+      "overlay",
+      "heading"
     ],
     "settings": [
       {
@@ -2987,15 +3156,15 @@
     "name": "button",
     "type": "block",
     "path": "blocks/button.liquid",
-    "capability": "Renders a customizable call-to-action button with responsive width options.",
+    "capability": "Clickable button with customizable label, link, width, and styling options.",
     "keywords": [
       "button",
       "cta",
-      "link",
       "action",
+      "link",
       "click",
-      "navigate",
-      "submit"
+      "call-to-action",
+      "style"
     ],
     "settings": [
       {
@@ -3036,16 +3205,15 @@
     "name": "jumbo-text",
     "type": "block",
     "path": "blocks/jumbo-text.liquid",
-    "capability": "Displays large decorative text with animation effects and typography controls.",
+    "capability": "Large display text block with typography effects and animation options.",
     "keywords": [
+      "text",
       "jumbo",
-      "large text",
-      "hero",
-      "headline",
-      "marquee",
-      "animation",
+      "large",
       "display",
-      "bold"
+      "typography",
+      "animation",
+      "effect"
     ],
     "settings": [
       {
@@ -3086,15 +3254,14 @@
     "name": "product-description",
     "type": "block",
     "path": "blocks/product-description.liquid",
-    "capability": "Renders a product description with rich text and full typography controls.",
+    "capability": "Rich text product description with typography and alignment customization.",
     "keywords": [
       "product",
       "description",
       "text",
       "details",
-      "info",
-      "copy",
-      "content"
+      "content",
+      "typography"
     ],
     "settings": [
       {
@@ -3179,15 +3346,14 @@
     "name": "payment-icons",
     "type": "block",
     "path": "blocks/payment-icons.liquid",
-    "capability": "Displays accepted payment method icons with alignment and spacing controls.",
+    "capability": "Displays payment method icons with customizable alignment, gap, and padding.",
     "keywords": [
       "payment",
       "icons",
-      "credit card",
       "methods",
-      "visa",
-      "checkout",
-      "trust"
+      "trust",
+      "badges",
+      "alignment"
     ],
     "settings": [
       {
@@ -3220,15 +3386,15 @@
     "name": "_featured-blog-posts-image",
     "type": "block",
     "path": "blocks/_featured-blog-posts-image.liquid",
-    "capability": "Displays a featured blog post image with aspect ratio and border options.",
+    "capability": "Featured blog post image with aspect ratio, border, and styling options.",
     "keywords": [
       "blog",
-      "featured",
       "image",
+      "featured",
       "post",
-      "thumbnail",
-      "article",
-      "picture"
+      "photo",
+      "border",
+      "ratio"
     ],
     "settings": [
       {
@@ -3257,15 +3423,15 @@
     "name": "menu",
     "type": "block",
     "path": "blocks/menu.liquid",
-    "capability": "Renders a navigation menu with optional accordion behavior and custom styling.",
+    "capability": "Navigation menu with optional accordion behavior, dividers, and color schemes.",
     "keywords": [
       "menu",
       "navigation",
       "links",
-      "footer",
       "accordion",
-      "nav",
-      "sitemap"
+      "list",
+      "header",
+      "footer"
     ],
     "settings": [
       {
@@ -3330,15 +3496,14 @@
     "name": "_product-details",
     "type": "block",
     "path": "blocks/_product-details.liquid",
-    "capability": "Container for product detail blocks with sticky positioning and layout options.",
+    "capability": "Product information container with sticky positioning and customizable layout.",
     "keywords": [
       "product",
       "details",
-      "information",
+      "info",
+      "specifications",
       "sticky",
-      "layout",
-      "container",
-      "sidebar"
+      "layout"
     ],
     "settings": [
       {
@@ -3461,16 +3626,15 @@
     "name": "social-links",
     "type": "block",
     "path": "blocks/social-links.liquid",
-    "capability": "Displays social media profile links for major platforms.",
+    "capability": "Social media links collection with URLs for multiple platforms.",
     "keywords": [
       "social",
       "links",
-      "facebook",
-      "instagram",
-      "twitter",
+      "media",
       "follow",
       "connect",
-      "icons"
+      "facebook",
+      "instagram"
     ],
     "settings": [
       {
@@ -3531,16 +3695,15 @@
     "name": "filters",
     "type": "block",
     "path": "blocks/filters.liquid",
-    "capability": "Renders collection filtering, sorting, and grid density controls.",
+    "capability": "Product filtering and sorting interface with customizable styles and options.",
     "keywords": [
       "filters",
-      "sorting",
+      "sort",
       "search",
       "refine",
-      "facets",
-      "collection",
-      "swatches",
-      "grid"
+      "products",
+      "grid",
+      "density"
     ],
     "settings": [
       {
@@ -3613,15 +3776,14 @@
     "name": "review",
     "type": "block",
     "path": "blocks/review.liquid",
-    "capability": "Displays a product star rating with optional review count and styling.",
+    "capability": "Star rating display with customizable style, color, and text alignment.",
     "keywords": [
       "review",
       "rating",
       "stars",
       "feedback",
-      "testimonial",
       "score",
-      "product"
+      "display"
     ],
     "settings": [
       {
@@ -3654,15 +3816,14 @@
     "name": "swatches",
     "type": "block",
     "path": "blocks/swatches.liquid",
-    "capability": "Renders product variant swatches with alignment and padding controls.",
+    "capability": "Product variant swatches with alignment and padding customization.",
     "keywords": [
       "swatches",
       "variants",
-      "color",
+      "colors",
       "options",
-      "selector",
       "product",
-      "picker"
+      "selection"
     ],
     "settings": [
       {
@@ -3699,14 +3860,14 @@
     "name": "_accordion-row",
     "type": "block",
     "path": "blocks/_accordion-row.liquid",
-    "capability": "Creates an expandable accordion row with heading, icon, and nested content.",
+    "capability": "Expandable accordion item with heading, icon, and optional image.",
     "keywords": [
       "accordion",
-      "expandable",
-      "collapsible",
+      "expand",
+      "collapse",
       "faq",
       "toggle",
-      "dropdown",
+      "heading",
       "row"
     ],
     "settings": [
@@ -3740,16 +3901,15 @@
     "name": "_product-media-gallery",
     "type": "block",
     "path": "blocks/_product-media-gallery.liquid",
-    "capability": "Displays product media in gallery, slideshow, or thumbnail layouts.",
+    "capability": "Product media gallery with multiple layout options, thumbnails, and controls.",
     "keywords": [
-      "product",
-      "media",
       "gallery",
+      "media",
       "images",
+      "product",
       "slideshow",
       "thumbnails",
-      "zoom",
-      "photos"
+      "zoom"
     ],
     "settings": [
       {
@@ -3846,15 +4006,14 @@
     "name": "_featured-product-information-carousel",
     "type": "block",
     "path": "blocks/_featured-product-information-carousel.liquid",
-    "capability": "Renders a featured product media carousel with zoom and video support.",
+    "capability": "Carousel displaying featured product with media, variants, and zoom capability.",
     "keywords": [
-      "featured",
-      "product",
       "carousel",
+      "product",
+      "featured",
       "media",
-      "slideshow",
       "zoom",
-      "video",
+      "variants",
       "slider"
     ],
     "settings": [
@@ -3936,15 +4095,14 @@
     "name": "_footer-social-icons",
     "type": "block",
     "path": "blocks/_footer-social-icons.liquid",
-    "capability": "Displays social media icons in the footer from linked social accounts.",
+    "capability": "Footer section for displaying social media icon links.",
     "keywords": [
       "footer",
       "social",
       "icons",
       "links",
-      "follow",
-      "connect",
-      "media"
+      "media",
+      "follow"
     ],
     "settings": [],
     "accepts": [
@@ -3955,15 +4113,14 @@
     "name": "_product-list-text",
     "type": "block",
     "path": "blocks/_product-list-text.liquid",
-    "capability": "Renders styled text content within a product list with typography controls.",
+    "capability": "Rich text content for product lists with typography and alignment controls.",
     "keywords": [
-      "product list",
+      "product",
+      "list",
       "text",
-      "description",
       "content",
       "typography",
-      "copy",
-      "info"
+      "description"
     ],
     "settings": [
       {
@@ -4048,15 +4205,15 @@
     "name": "spacer",
     "type": "block",
     "path": "blocks/spacer.liquid",
-    "capability": "Adds responsive vertical or horizontal spacing between content blocks.",
+    "capability": "Vertical spacing element with customizable size and responsive options.",
     "keywords": [
       "spacer",
-      "space",
+      "spacing",
       "gap",
-      "padding",
       "margin",
-      "whitespace",
-      "separator"
+      "padding",
+      "vertical",
+      "responsive"
     ],
     "settings": [
       {
@@ -4093,16 +4250,15 @@
     "name": "_heading",
     "type": "block",
     "path": "blocks/_heading.liquid",
-    "capability": "Renders a rich text heading with full typography and color customization.",
+    "capability": "Customizable heading with typography, color, and text transformation options.",
     "keywords": [
       "heading",
       "title",
       "text",
-      "headline",
       "typography",
-      "header",
-      "h1",
-      "h2"
+      "font",
+      "color",
+      "h1"
     ],
     "settings": [
       {
@@ -4175,15 +4331,14 @@
     "name": "featured-collection",
     "type": "block",
     "path": "blocks/featured-collection.liquid",
-    "capability": "Displays products from a selected collection in a featured section.",
+    "capability": "Displays a featured product collection with customizable layout.",
     "keywords": [
-      "featured",
       "collection",
+      "featured",
       "products",
+      "grid",
       "showcase",
-      "curated",
-      "shop",
-      "catalog"
+      "category"
     ],
     "settings": [
       {
@@ -4200,15 +4355,14 @@
     "name": "page-content",
     "type": "block",
     "path": "blocks/page-content.liquid",
-    "capability": "Renders the full content body of a Shopify page.",
+    "capability": "Renders the main page content area for dynamic page layouts.",
     "keywords": [
       "page",
       "content",
+      "main",
       "body",
-      "static",
-      "cms",
-      "text",
-      "html"
+      "layout",
+      "render"
     ],
     "settings": []
   },
@@ -4216,15 +4370,14 @@
     "name": "_announcement",
     "type": "block",
     "path": "blocks/_announcement.liquid",
-    "capability": "Displays an inline announcement message with optional link and styling.",
+    "capability": "Announcement banner with text, link, and customizable typography.",
     "keywords": [
       "announcement",
       "banner",
-      "notice",
       "alert",
-      "bar",
-      "promo",
-      "message"
+      "message",
+      "notification",
+      "text"
     ],
     "settings": [
       {
@@ -4261,15 +4414,15 @@
     "name": "contact-form",
     "type": "block",
     "path": "blocks/contact-form.liquid",
-    "capability": "Renders a contact form with responsive width and color scheme options.",
+    "capability": "Contact form with customizable width, color scheme, and padding options.",
     "keywords": [
       "contact",
       "form",
-      "email",
+      "input",
       "message",
-      "inquiry",
-      "support",
-      "feedback"
+      "email",
+      "submit",
+      "inquiry"
     ],
     "settings": [
       {
@@ -4318,15 +4471,15 @@
     "name": "comparison-slider",
     "type": "block",
     "path": "blocks/comparison-slider.liquid",
-    "capability": "Displays a before/after image comparison with an interactive slider.",
+    "capability": "Interactive before/after image slider with customizable text labels.",
     "keywords": [
-      "comparison",
-      "slider",
       "before after",
-      "image",
-      "compare",
-      "interactive",
-      "split"
+      "image comparison",
+      "slider",
+      "toggle",
+      "reveal",
+      "side by side",
+      "product showcase"
     ],
     "settings": [
       {
@@ -4447,16 +4600,16 @@
     "name": "_content",
     "type": "block",
     "path": "blocks/_content.liquid",
-    "capability": "A flexible content container with alignment, gap, and nested block support.",
+    "capability": "Flexible container for organizing content with alignment and spacing controls.",
     "keywords": [
-      "content",
       "container",
       "wrapper",
       "layout",
-      "section",
-      "block",
-      "group",
-      "columns"
+      "flex",
+      "spacing",
+      "gap",
+      "alignment",
+      "padding"
     ],
     "settings": [
       {
@@ -4510,15 +4663,14 @@
     "name": "page",
     "type": "block",
     "path": "blocks/page.liquid",
-    "capability": "Embeds a Shopify page's content with background and padding options.",
+    "capability": "Renders a full page with selectable page content and customizable styling.",
     "keywords": [
       "page",
-      "embed",
-      "content",
-      "static",
-      "cms",
-      "include",
-      "insert"
+      "full page",
+      "content page",
+      "static page",
+      "background",
+      "padding"
     ],
     "settings": [
       {
@@ -4563,15 +4715,15 @@
     "name": "_inline-text",
     "type": "block",
     "path": "blocks/_inline-text.liquid",
-    "capability": "Renders a single line of inline text with font and style controls.",
+    "capability": "Renders styled inline text with typography and case customization.",
     "keywords": [
-      "inline",
       "text",
-      "label",
-      "caption",
-      "small text",
+      "inline",
       "typography",
-      "span"
+      "font",
+      "weight",
+      "spacing",
+      "case"
     ],
     "settings": [
       {
@@ -4604,15 +4756,15 @@
     "name": "_collection-info",
     "type": "block",
     "path": "blocks/_collection-info.liquid",
-    "capability": "Displays collection metadata with navigation, icons, and color scheme options.",
+    "capability": "Displays collection metadata with navigation and icon styling options.",
     "keywords": [
       "collection",
       "info",
-      "navigation",
       "metadata",
-      "category",
-      "header",
-      "collection details"
+      "navigation",
+      "icons",
+      "breadcrumb",
+      "header"
     ],
     "settings": [
       {
@@ -4661,16 +4813,15 @@
     "name": "_product-list-content",
     "type": "block",
     "path": "blocks/_product-list-content.liquid",
-    "capability": "Arranges product list content in flexible row or column layouts.",
+    "capability": "Grid layout container for product list items with flexible alignment.",
     "keywords": [
       "product list",
-      "content",
-      "layout",
       "grid",
+      "layout",
       "columns",
+      "cards",
       "alignment",
-      "flex",
-      "direction"
+      "spacing"
     ],
     "settings": [
       {
@@ -4805,14 +4956,14 @@
     "name": "icon",
     "type": "block",
     "path": "blocks/icon.liquid",
-    "capability": "Renders a selectable or custom-uploaded icon with optional link.",
+    "capability": "Renders a single icon with optional link and custom sizing.",
     "keywords": [
       "icon",
       "symbol",
-      "image",
+      "image icon",
       "link",
-      "graphic",
-      "custom icon"
+      "clickable",
+      "svg"
     ],
     "settings": [
       {
@@ -4841,15 +4992,14 @@
     "name": "buy-buttons",
     "type": "block",
     "path": "blocks/buy-buttons.liquid",
-    "capability": "Displays add-to-cart and buy-now buttons with pickup availability.",
+    "capability": "Displays add-to-cart and checkout buttons with optional pickup availability.",
     "keywords": [
-      "buy",
+      "buy button",
       "add to cart",
-      "purchase",
       "checkout",
-      "gift card",
+      "purchase",
       "pickup",
-      "buttons"
+      "gift card"
     ],
     "settings": [
       {
@@ -4886,15 +5036,14 @@
     "name": "_product-card-group",
     "type": "block",
     "path": "blocks/_product-card-group.liquid",
-    "capability": "Groups product card elements like text, image, and price in a layout.",
+    "capability": "Grid layout for product card content with flexible alignment and spacing.",
     "keywords": [
       "product card",
-      "group",
-      "layout",
       "grid",
+      "layout",
       "columns",
-      "card content",
-      "arrangement"
+      "cards",
+      "product display"
     ],
     "settings": [
       {
@@ -5055,15 +5204,15 @@
     "name": "accordion",
     "type": "block",
     "path": "blocks/accordion.liquid",
-    "capability": "Renders collapsible accordion rows with customizable borders and icons.",
+    "capability": "Collapsible accordion component with customizable styling and dividers.",
     "keywords": [
       "accordion",
-      "collapsible",
+      "collapse",
+      "expand",
       "faq",
-      "expandable",
       "toggle",
-      "dropdown",
-      "details"
+      "sections",
+      "expandable"
     ],
     "settings": [
       {
@@ -5127,14 +5276,14 @@
     "name": "_image",
     "type": "block",
     "path": "blocks/_image.liquid",
-    "capability": "Displays an image block with configurable height, ratio, and border radius.",
+    "capability": "Renders an image with aspect ratio and border radius controls.",
     "keywords": [
       "image",
       "picture",
       "photo",
-      "media",
       "ratio",
-      "border radius"
+      "border radius",
+      "responsive"
     ],
     "settings": [
       {
@@ -5155,14 +5304,13 @@
     "name": "add-to-cart",
     "type": "block",
     "path": "blocks/add-to-cart.liquid",
-    "capability": "Renders a standalone add-to-cart button with style options.",
+    "capability": "Renders add-to-cart button with customizable styling.",
     "keywords": [
       "add to cart",
-      "buy",
       "button",
-      "cart",
       "purchase",
-      "atc"
+      "buy",
+      "cart"
     ],
     "settings": [
       {
@@ -5175,14 +5323,14 @@
     "name": "follow-on-shop",
     "type": "block",
     "path": "blocks/follow-on-shop.liquid",
-    "capability": "Displays a Follow on Shop button for store followers.",
+    "capability": "Displays Shop social follow button with customizable spacing.",
     "keywords": [
       "follow",
+      "social",
       "shop",
+      "connect",
       "subscribe",
-      "store",
-      "brand",
-      "connect"
+      "button"
     ],
     "settings": [
       {
@@ -5207,13 +5355,13 @@
     "name": "_featured-product-price",
     "type": "block",
     "path": "blocks/_featured-product-price.liquid",
-    "capability": "Shows featured product price with optional sale price ordering.",
+    "capability": "Displays product pricing with sale price and preset styling options.",
     "keywords": [
       "price",
-      "featured product",
-      "sale",
+      "product price",
+      "sale price",
       "cost",
-      "money",
+      "featured",
       "discount"
     ],
     "settings": [
@@ -5231,14 +5379,14 @@
     "name": "_inline-collection-title",
     "type": "block",
     "path": "blocks/_inline-collection-title.liquid",
-    "capability": "Renders a collection title inline with custom typography settings.",
+    "capability": "Renders styled collection title with typography customization.",
     "keywords": [
       "collection title",
-      "inline",
       "heading",
       "typography",
       "font",
-      "category name"
+      "text",
+      "inline"
     ],
     "settings": [
       {
@@ -5267,14 +5415,13 @@
     "name": "_content-without-appearance",
     "type": "block",
     "path": "blocks/_content-without-appearance.liquid",
-    "capability": "Groups content blocks without visual styling or appearance settings.",
+    "capability": "Minimal container for content layout without styling controls.",
     "keywords": [
-      "content",
-      "wrapper",
-      "group",
-      "unstyled",
       "container",
+      "wrapper",
       "layout",
+      "flex",
+      "spacing",
       "minimal"
     ],
     "settings": [
@@ -5308,16 +5455,15 @@
     "name": "group",
     "type": "block",
     "path": "blocks/group.liquid",
-    "capability": "Flexible container that groups child blocks in rows or columns.",
+    "capability": "Flexible layout container with alignment, spacing, and width controls.",
     "keywords": [
       "group",
       "container",
       "layout",
-      "row",
-      "column",
       "flex",
-      "wrapper",
-      "grid"
+      "columns",
+      "spacing",
+      "alignment"
     ],
     "settings": [
       {
@@ -5475,15 +5621,14 @@
     "name": "_featured-product-gallery",
     "type": "block",
     "path": "blocks/_featured-product-gallery.liquid",
-    "capability": "Displays a featured product image gallery with ratio controls.",
+    "capability": "Displays product image gallery with aspect ratio and viewport constraints.",
     "keywords": [
       "gallery",
       "product images",
+      "image gallery",
+      "carousel",
       "featured",
-      "photos",
-      "slideshow",
-      "media",
-      "viewport"
+      "photos"
     ],
     "settings": [
       {
@@ -5500,15 +5645,14 @@
     "name": "_cart-products",
     "type": "block",
     "path": "blocks/_cart-products.liquid",
-    "capability": "Lists products in the cart with images, vendor info, and dividers.",
+    "capability": "Lists cart items with image ratio, dividers, and vendor information.",
     "keywords": [
       "cart",
       "products",
-      "line items",
-      "basket",
-      "order",
-      "vendor",
-      "cart list"
+      "items",
+      "list",
+      "shopping cart",
+      "checkout"
     ],
     "settings": [
       {
@@ -5549,15 +5693,15 @@
     "name": "_featured-blog-posts-card",
     "type": "block",
     "path": "blocks/_featured-blog-posts-card.liquid",
-    "capability": "Renders a styled card for featured blog post entries.",
+    "capability": "Card component for displaying featured blog posts with styling.",
     "keywords": [
       "blog",
-      "post",
       "card",
+      "featured posts",
       "article",
-      "featured",
-      "news",
-      "blog card"
+      "content",
+      "border",
+      "rounded"
     ],
     "settings": [
       {
@@ -5614,14 +5758,13 @@
     "name": "_header-logo",
     "type": "block",
     "path": "blocks/_header-logo.liquid",
-    "capability": "Displays the store logo in the header with visibility options.",
+    "capability": "Renders site logo with optional home page visibility toggle.",
     "keywords": [
       "logo",
       "header",
-      "brand",
-      "identity",
+      "branding",
       "home page",
-      "store logo"
+      "site identity"
     ],
     "settings": [
       {
@@ -5650,14 +5793,13 @@
     "name": "_collection-image",
     "type": "block",
     "path": "blocks/_collection-image.liquid",
-    "capability": "Displays a collection's featured image with size and ratio controls.",
+    "capability": "Displays collection image with customizable dimensions and ratio.",
     "keywords": [
-      "collection",
-      "image",
-      "banner",
-      "category image",
-      "featured",
-      "photo"
+      "collection image",
+      "picture",
+      "photo",
+      "collection header",
+      "banner"
     ],
     "settings": [
       {
@@ -5698,15 +5840,14 @@
     "name": "_blog-post-description",
     "type": "block",
     "path": "blocks/_blog-post-description.liquid",
-    "capability": "Shows a blog post description with rich typography customization.",
+    "capability": "Renders blog post description with typography and color customization.",
     "keywords": [
       "blog",
       "description",
       "excerpt",
-      "summary",
-      "post",
-      "article",
-      "text"
+      "text",
+      "typography",
+      "post content"
     ],
     "settings": [
       {
@@ -5755,15 +5896,14 @@
     "name": "text",
     "type": "block",
     "path": "blocks/text.liquid",
-    "capability": "Renders a rich text block with alignment and typography controls.",
+    "capability": "Renders rich text content with typography and alignment controls.",
     "keywords": [
       "text",
-      "paragraph",
-      "content",
       "rich text",
-      "copy",
+      "content",
+      "paragraph",
       "typography",
-      "body"
+      "alignment"
     ],
     "settings": [
       {
@@ -5848,15 +5988,15 @@
     "name": "_slide",
     "type": "block",
     "path": "blocks/_slide.liquid",
-    "capability": "Defines a slideshow slide with media and flexible content layout.",
+    "capability": "Carousel slide with media and flexible content layout.",
     "keywords": [
       "slide",
-      "slideshow",
       "carousel",
-      "banner",
       "slider",
-      "hero",
-      "media"
+      "media",
+      "image",
+      "video",
+      "banner"
     ],
     "settings": [
       {
@@ -5961,14 +6101,13 @@
     "name": "_collection-link",
     "type": "block",
     "path": "blocks/_collection-link.liquid",
-    "capability": "Renders a link to a collection with optional product count.",
+    "capability": "Renders collection link with optional item count display.",
     "keywords": [
-      "collection",
-      "link",
-      "category",
-      "count",
+      "collection link",
       "navigation",
-      "browse"
+      "link",
+      "count",
+      "breadcrumb"
     ],
     "settings": [
       {
@@ -5981,15 +6120,14 @@
     "name": "product-inventory",
     "type": "block",
     "path": "blocks/product-inventory.liquid",
-    "capability": "Displays product stock level with configurable inventory threshold.",
+    "capability": "Displays product inventory status with threshold and quantity options.",
     "keywords": [
       "inventory",
       "stock",
       "availability",
       "quantity",
-      "in stock",
-      "remaining",
-      "product"
+      "product",
+      "in stock"
     ],
     "settings": [
       {
@@ -6022,15 +6160,13 @@
     "name": "product-custom-property",
     "type": "block",
     "path": "blocks/product-custom-property.liquid",
-    "capability": "Adds custom input fields for product line item properties.",
+    "capability": "Custom product property input field with validation and styling.",
     "keywords": [
       "custom property",
-      "input",
       "form field",
-      "personalization",
-      "engraving",
-      "custom",
-      "line item"
+      "input",
+      "product option",
+      "attribute"
     ],
     "settings": [
       {
@@ -6091,14 +6227,13 @@
     "name": "_blog-post-content",
     "type": "block",
     "path": "blocks/_blog-post-content.liquid",
-    "capability": "Renders the full content body of a blog post article.",
+    "capability": "Container for blog post body content and formatting.",
     "keywords": [
       "blog",
-      "content",
+      "post content",
       "article",
-      "post body",
-      "full text",
-      "blog post"
+      "body",
+      "content area"
     ],
     "settings": []
   },
@@ -6106,14 +6241,14 @@
     "name": "_search-input",
     "type": "block",
     "path": "blocks/_search-input.liquid",
-    "capability": "Displays a search input field with width and color scheme options.",
+    "capability": "Search input field with customizable width and color scheme.",
     "keywords": [
       "search",
       "input",
-      "search bar",
+      "search box",
       "find",
       "query",
-      "lookup"
+      "search field"
     ],
     "settings": [
       {
@@ -6138,15 +6273,14 @@
     "name": "price",
     "type": "block",
     "path": "blocks/price.liquid",
-    "capability": "Shows product price with sale, installment, and tax info options.",
+    "capability": "Displays product price with sale, installments, and tax options.",
     "keywords": [
       "price",
       "cost",
-      "money",
-      "sale",
+      "sale price",
       "installments",
       "tax",
-      "product price"
+      "product pricing"
     ],
     "settings": [
       {
@@ -6219,15 +6353,13 @@
     "name": "_product-card",
     "type": "block",
     "path": "blocks/_product-card.liquid",
-    "capability": "Renders a styled product card with image, text, price, and buy button.",
+    "capability": "Product card container with image, price, and button layout.",
     "keywords": [
       "product card",
       "card",
-      "product tile",
-      "grid item",
-      "product",
-      "shop",
-      "catalog"
+      "product display",
+      "item card",
+      "grid item"
     ],
     "settings": [
       {
@@ -6294,16 +6426,15 @@
     "name": "variant-picker",
     "type": "block",
     "path": "blocks/variant-picker.liquid",
-    "capability": "Displays product variant options with dropdown or swatch selectors.",
+    "capability": "Product variant selector with swatch and style options.",
     "keywords": [
       "variant",
       "picker",
+      "selector",
       "options",
       "swatches",
-      "size",
       "color",
-      "selector",
-      "dropdown"
+      "size"
     ],
     "settings": [
       {
@@ -6340,15 +6471,14 @@
     "name": "image",
     "type": "block",
     "path": "blocks/image.liquid",
-    "capability": "Displays a configurable image with link, ratio, and responsive sizing.",
+    "capability": "Renders responsive image with link, ratio, and border options.",
     "keywords": [
       "image",
       "picture",
       "photo",
-      "banner",
-      "media",
       "responsive",
-      "visual"
+      "link",
+      "border"
     ],
     "settings": [
       {
@@ -6421,15 +6551,14 @@
     "name": "_media",
     "type": "block",
     "path": "blocks/_media.liquid",
-    "capability": "Renders an image or video media block with playback controls.",
+    "capability": "Media container supporting images and videos with autoplay controls.",
     "keywords": [
       "media",
-      "video",
       "image",
-      "autoplay",
-      "loop",
+      "video",
       "multimedia",
-      "visual"
+      "autoplay",
+      "loop"
     ],
     "settings": [
       {
@@ -6490,15 +6619,14 @@
     "name": "collection-title",
     "type": "block",
     "path": "blocks/collection-title.liquid",
-    "capability": "Displays the collection title with full typography customization.",
+    "capability": "Renders collection title with typography and alignment customization.",
     "keywords": [
-      "collection",
-      "title",
+      "collection title",
       "heading",
-      "category",
-      "name",
+      "title",
       "typography",
-      "header"
+      "text",
+      "alignment"
     ],
     "settings": [
       {
@@ -6579,15 +6707,14 @@
     "name": "_media-without-appearance",
     "type": "block",
     "path": "blocks/_media-without-appearance.liquid",
-    "capability": "Renders image or video media without visual styling wrappers.",
+    "capability": "Media container for images and videos without styling controls.",
     "keywords": [
       "media",
-      "unstyled",
       "image",
       "video",
-      "raw",
       "minimal",
-      "content"
+      "container",
+      "positioning"
     ],
     "settings": [
       {
@@ -6628,15 +6755,15 @@
     "name": "footer-policy-list",
     "type": "block",
     "path": "blocks/footer-policy-list.liquid",
-    "capability": "Displays store policy links in the footer area.",
+    "capability": "Displays footer policy links with customizable font and case.",
     "keywords": [
       "footer",
       "policy",
+      "links",
       "legal",
       "terms",
       "privacy",
-      "links",
-      "refund"
+      "list"
     ],
     "settings": [
       {
@@ -6653,14 +6780,13 @@
     "name": "_featured-product",
     "type": "block",
     "path": "blocks/_featured-product.liquid",
-    "capability": "Renders a featured product block for highlighting a single product.",
+    "capability": "Container for featured product display with full product details.",
     "keywords": [
       "featured product",
-      "highlight",
-      "showcase",
       "product",
-      "spotlight",
-      "hero"
+      "showcase",
+      "highlight",
+      "promotion"
     ],
     "settings": []
   },
@@ -6668,15 +6794,16 @@
     "name": "contact-form-submit-button",
     "type": "block",
     "path": "blocks/contact-form-submit-button.liquid",
-    "capability": "Renders a submit button for the contact form with style options.",
+    "capability": "Renders a customizable submit button for contact forms with style and sizing options.",
     "keywords": [
       "submit",
       "button",
-      "contact",
       "form",
-      "send",
-      "contact form",
-      "cta"
+      "contact",
+      "cta",
+      "call to action",
+      "width",
+      "responsive"
     ],
     "settings": [
       {
@@ -6709,15 +6836,16 @@
     "name": "_card",
     "type": "block",
     "path": "blocks/_card.liquid",
-    "capability": "A styled card container with color scheme that holds mixed content.",
+    "capability": "Flexible card container that arranges content with alignment, spacing, and color scheme controls.",
     "keywords": [
       "card",
       "container",
-      "tile",
-      "box",
       "layout",
-      "content card",
-      "styled"
+      "grid",
+      "columns",
+      "alignment",
+      "spacing",
+      "color scheme"
     ],
     "settings": [
       {
@@ -6832,15 +6960,15 @@
     "name": "accelerated-checkout",
     "type": "block",
     "path": "blocks/accelerated-checkout.liquid",
-    "capability": "Displays dynamic accelerated checkout buttons like Apple Pay or GPay.",
+    "capability": "Enables fast, streamlined checkout experience with accelerated payment processing.",
     "keywords": [
-      "accelerated",
       "checkout",
-      "apple pay",
-      "google pay",
+      "payment",
+      "accelerated",
+      "fast",
       "express",
-      "dynamic",
-      "payment"
+      "buy now",
+      "purchase"
     ],
     "settings": []
   },
@@ -6848,16 +6976,16 @@
     "name": "_marquee",
     "type": "block",
     "path": "blocks/_marquee.liquid",
-    "capability": "Creates a scrolling marquee ticker with text, icons, and dividers.",
+    "capability": "Displays scrolling text or content in a continuous loop with directional movement.",
     "keywords": [
       "marquee",
-      "ticker",
-      "scrolling",
-      "banner",
-      "announcement",
       "scroll",
+      "ticker",
+      "loop",
+      "moving text",
+      "carousel",
       "animation",
-      "moving text"
+      "banner"
     ],
     "settings": [
       {
@@ -6899,16 +7027,15 @@
     "name": "_hotspot-product",
     "type": "block",
     "path": "blocks/_hotspot-product.liquid",
-    "capability": "Displays a product hotspot at a specific position on an image.",
+    "capability": "Places interactive product hotspots on images at specified x/y coordinates.",
     "keywords": [
       "hotspot",
       "product",
-      "pin",
       "interactive",
-      "shoppable",
-      "image map",
-      "tooltip",
-      "position"
+      "clickable",
+      "image",
+      "position",
+      "shoppable"
     ],
     "settings": [
       {
@@ -6929,16 +7056,16 @@
     "name": "_collection-card-image",
     "type": "block",
     "path": "blocks/_collection-card-image.liquid",
-    "capability": "Renders a collection card image with overlay and border styling options.",
+    "capability": "Displays collection images with overlay, border, and styling customization options.",
     "keywords": [
       "collection",
       "card",
       "image",
       "overlay",
-      "grid",
       "border",
+      "ratio",
       "gradient",
-      "thumbnail"
+      "visual"
     ],
     "settings": [
       {
@@ -6983,16 +7110,16 @@
     "name": "_header-menu",
     "type": "block",
     "path": "blocks/_header-menu.liquid",
-    "capability": "Renders a header navigation menu with typography and featured content options.",
+    "capability": "Renders navigation menu with typography, styling, and featured product/collection display.",
     "keywords": [
-      "header",
       "menu",
       "navigation",
-      "nav",
+      "header",
       "links",
-      "mega menu",
-      "primary menu",
-      "site navigation"
+      "dropdown",
+      "featured",
+      "typography",
+      "nav"
     ],
     "settings": [
       {
@@ -7061,14 +7188,15 @@
     "name": "footer-copyright",
     "type": "block",
     "path": "blocks/footer-copyright.liquid",
-    "capability": "Displays copyright text and optional Shopify attribution in the footer.",
+    "capability": "Displays copyright text with optional powered-by attribution and text styling.",
     "keywords": [
-      "footer",
       "copyright",
-      "powered by",
+      "footer",
       "legal",
       "attribution",
-      "bottom"
+      "powered by",
+      "text",
+      "branding"
     ],
     "settings": [
       {
@@ -7089,15 +7217,16 @@
     "name": "product-title",
     "type": "block",
     "path": "blocks/product-title.liquid",
-    "capability": "Renders the product title with customizable typography and layout settings.",
+    "capability": "Renders product name with extensive typography and alignment customization.",
     "keywords": [
-      "product",
       "title",
+      "product",
       "heading",
-      "name",
-      "typography",
       "text",
-      "product name"
+      "typography",
+      "font",
+      "alignment",
+      "case"
     ],
     "settings": [
       {
@@ -7178,16 +7307,16 @@
     "name": "product-card",
     "type": "block",
     "path": "blocks/product-card.liquid",
-    "capability": "Displays a product card with configurable layout, styling, and nested content blocks.",
+    "capability": "Displays product information card with image, price, and review components in grid layout.",
     "keywords": [
       "product",
       "card",
       "grid",
-      "tile",
-      "featured product",
-      "product block",
-      "columns",
-      "showcase"
+      "layout",
+      "price",
+      "image",
+      "review",
+      "columns"
     ],
     "settings": [
       {
@@ -7273,14 +7402,15 @@
     "name": "sku",
     "type": "block",
     "path": "blocks/sku.liquid",
-    "capability": "Displays the product SKU identifier with customizable typography.",
+    "capability": "Displays product SKU with typography, alignment, and color customization options.",
     "keywords": [
       "sku",
-      "product code",
+      "product",
+      "code",
       "identifier",
-      "inventory",
-      "stock number",
-      "variant"
+      "text",
+      "typography",
+      "label"
     ],
     "settings": [
       {
@@ -7341,15 +7471,15 @@
     "name": "_layered-slide",
     "type": "block",
     "path": "blocks/_layered-slide.liquid",
-    "capability": "Creates a layered slide with media and flexible content arrangement.",
+    "capability": "Creates layered slide with media and content positioned with flexible alignment controls.",
     "keywords": [
       "slide",
-      "layer",
-      "slideshow",
-      "hero",
-      "banner",
+      "layered",
       "media",
+      "image",
+      "video",
       "carousel",
+      "hero",
       "layout"
     ],
     "settings": [
@@ -7455,16 +7585,15 @@
     "name": "_blog-post-card",
     "type": "block",
     "path": "blocks/_blog-post-card.liquid",
-    "capability": "Renders a blog post card with configurable text alignment.",
+    "capability": "Renders blog post preview card with text alignment customization.",
     "keywords": [
       "blog",
       "post",
       "card",
       "article",
-      "news",
-      "grid",
-      "blog card",
-      "content"
+      "preview",
+      "content",
+      "alignment"
     ],
     "settings": [
       {
@@ -7477,15 +7606,16 @@
     "name": "quantity",
     "type": "block",
     "path": "blocks/quantity.liquid",
-    "capability": "Renders a quantity selector input for product forms.",
+    "capability": "Provides quantity selector input for product purchases with increment/decrement controls.",
     "keywords": [
       "quantity",
-      "amount",
-      "number",
-      "input",
       "selector",
-      "add to cart",
-      "counter"
+      "input",
+      "number",
+      "increment",
+      "decrement",
+      "cart",
+      "product"
     ],
     "settings": []
   },
@@ -7493,15 +7623,15 @@
     "name": "_cart-title",
     "type": "block",
     "path": "blocks/_cart-title.liquid",
-    "capability": "Displays the cart page title with optional item count and spacing controls.",
+    "capability": "Displays cart heading with optional item count and customizable typography and spacing.",
     "keywords": [
       "cart",
       "title",
       "heading",
-      "cart header",
-      "item count",
-      "basket",
-      "shopping cart"
+      "count",
+      "items",
+      "typography",
+      "label"
     ],
     "settings": [
       {
@@ -7542,16 +7672,16 @@
     "name": "_blog-post-featured-image",
     "type": "block",
     "path": "blocks/_blog-post-featured-image.liquid",
-    "capability": "Displays a blog post's featured image with ratio and border controls.",
+    "capability": "Shows blog post featured image with ratio, sizing, border, and responsive controls.",
     "keywords": [
       "blog",
-      "featured image",
-      "post image",
-      "article image",
-      "thumbnail",
-      "hero image",
+      "image",
+      "featured",
+      "ratio",
       "border",
-      "cover"
+      "responsive",
+      "width",
+      "height"
     ],
     "settings": [
       {
