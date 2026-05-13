@@ -1495,6 +1495,252 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "benefits_Bn2kP5": {
+      "type": "section",
+      "blocks": {
+        "main_heading": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Benefits for your expediency</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "type_preset": "h2",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          }
+        },
+        "benefits_row": {
+          "type": "group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 100,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "benefit_1": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 8,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "benefit_1_title": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Payment Method</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "type_preset": "h4",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                },
+                "benefit_1_desc": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>We offer flexible payment options, to make easier.</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "type_preset": "rte",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["benefit_1_title", "benefit_1_desc"]
+            },
+            "benefit_2": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 8,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "benefit_2_title": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Return policy</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "type_preset": "h4",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                },
+                "benefit_2_desc": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>You can return a product within 30 days.</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "type_preset": "rte",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["benefit_2_title", "benefit_2_desc"]
+            },
+            "benefit_3": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 8,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "benefit_3_title": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Customer Support</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "type_preset": "h4",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                },
+                "benefit_3_desc": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Our customer support is 24/7.</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "type_preset": "rte",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["benefit_3_title", "benefit_3_desc"]
+            }
+          },
+          "block_order": ["benefit_1", "benefit_2", "benefit_3"]
+        }
+      },
+      "block_order": ["main_heading", "benefits_row"],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "small",
+        "color_scheme": "scheme-2",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "padding-block-start": 100,
+        "padding-block-end": 100
+      }
     }
   },
   "order": [
@@ -1508,6 +1754,7 @@
     "milestones_timeline_xR9wK2",
     "partner_logos_Kx7mR3",
     "shipping_returns_faq_Rx4mKe",
-    "projects_grid_Ab1cD2"
+    "projects_grid_Ab1cD2",
+    "benefits_Bn2kP5"
   ]
 }
