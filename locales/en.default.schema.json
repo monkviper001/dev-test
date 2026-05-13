@@ -176,6 +176,7 @@
     "pieces_better_with_time": "<p>Pieces that only get better with time and wear </p>",
     "new_arrivals_h2": "<h2>New arrivals</h2>",
     "new_arrivals_h3": "<h3>New arrivals</h3>",
+    "projects_heading": "<h2>Our Projects</h2>",
     "product_launch": "<p>Take a look behind the scenes of our latest product launch.</p>",
     "product_story": "<p>At the heart of every product lies a unique story, driven by our passion for quality and innovation. Each item enhances your everyday life and sparks joy.</p>",
     "quality_you_can_feel": "<h2>Quality you can feel</h2>",
@@ -399,6 +400,8 @@
     "submit_button": "Submit button",
     "summary": "Summary",
     "swatches": "Swatches",
+    "project_card": "Project card",
+    "projects_grid": "Projects grid",
     "testimonial_card": "Testimonial card",
     "testimonials": "Testimonials",
     "text": "Text",
@@ -1077,6 +1080,11 @@
     "cs_slider_style": "Slider style",
     "cs_slider_color": "Slider color",
     "cs_slider_inner_color": "Slider inner color",
+    "project_card": {
+      "title": "Title",
+      "link": "Link",
+      "overlay_opacity": "Overlay opacity"
+    },
     "testimonial_card": {
       "author_name": "Author name",
       "rating": "Rating",

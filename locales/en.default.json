@@ -326,6 +326,9 @@
     "team_grid": {
       "linkedin": "LinkedIn",
       "twitter": "X (Twitter)"
+    },
+    "project_card": {
+      "view_project": "View project"
     }
   },
   "products": {

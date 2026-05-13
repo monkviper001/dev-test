@@ -22,6 +22,9 @@
     },
     {
       "type": "testimonial-card"
+    },
+    {
+      "type": "project-card"
     }
   ],
   "disabled_on": {
@@ -1761,6 +1764,47 @@
         "color_scheme": "scheme-3",
         "padding-block-start": 40,
         "padding-block-end": 40
+      }
+    },
+    {
+      "name": "t:names.projects_grid",
+      "category": "t:categories.text",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "settings": {
+            "text": "t:html_defaults.projects_heading",
+            "type_preset": "h2",
+            "max_width": "none"
+          }
+        },
+        "projects_row": {
+          "type": "group",
+          "settings": {
+            "content_direction": "row",
+            "gap": 16,
+            "vertical_on_mobile": true
+          },
+          "blocks": {
+            "project_1": {
+              "type": "project-card"
+            },
+            "project_2": {
+              "type": "project-card"
+            },
+            "project_3": {
+              "type": "project-card"
+            }
+          },
+          "block_order": ["project_1", "project_2", "project_3"]
+        }
+      },
+      "block_order": ["heading", "projects_row"],
+      "settings": {
+        "content_direction": "column",
+        "gap": 24,
+        "padding-block-start": 48,
+        "padding-block-end": 48
       }
     }
   ]
