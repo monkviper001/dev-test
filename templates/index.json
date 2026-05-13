@@ -1455,6 +1455,46 @@
           "block_order": ["caption", "main_group", "button"]
         }
       }
+    },
+    "projects_grid_Ab1cD2": {
+      "type": "section",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Our Projects</h2>",
+            "type_preset": "h2",
+            "max_width": "none"
+          }
+        },
+        "projects_row": {
+          "type": "group",
+          "settings": {
+            "content_direction": "row",
+            "gap": 16,
+            "vertical_on_mobile": true
+          },
+          "blocks": {
+            "project_1": {
+              "type": "project-card"
+            },
+            "project_2": {
+              "type": "project-card"
+            },
+            "project_3": {
+              "type": "project-card"
+            }
+          },
+          "block_order": ["project_1", "project_2", "project_3"]
+        }
+      },
+      "block_order": ["heading", "projects_row"],
+      "settings": {
+        "content_direction": "column",
+        "gap": 24,
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
     }
   },
   "order": [
@@ -1467,6 +1507,7 @@
     "team_grid_mT5nQ7",
     "milestones_timeline_xR9wK2",
     "partner_logos_Kx7mR3",
-    "shipping_returns_faq_Rx4mKe"
+    "shipping_returns_faq_Rx4mKe",
+    "projects_grid_Ab1cD2"
   ]
 }
