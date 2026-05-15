@@ -1082,6 +1082,7 @@
     "cs_slider_inner_color": "Slider inner color",
     "project_card": {
       "title": "Title",
+      "subtitle": "Subtitle",
       "link": "Link",
       "overlay_opacity": "Overlay opacity"
     },

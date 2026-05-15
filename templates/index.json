@@ -1540,41 +1540,175 @@
     "projects_grid_Ab1cD2": {
       "type": "section",
       "blocks": {
-        "heading": {
+        "our_projects_label": {
           "type": "text",
           "settings": {
-            "text": "<h2>Our Projects</h2>",
-            "type_preset": "h2",
-            "max_width": "none"
+            "text": "<p>Our Projects</p>",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "letter_spacing": "loose",
+            "case": "uppercase",
+            "line_height": "normal",
+            "wrap": "pretty",
+            "width": "fit-content",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           }
         },
-        "projects_row": {
+        "main_heading": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Check out some of our awesome projects with creative ideas and great design.</h2>",
+            "type_preset": "h2",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "color": "var(--color-foreground-heading)",
+            "background": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          }
+        },
+        "row_1": {
           "type": "group",
           "settings": {
             "content_direction": "row",
-            "gap": 16,
-            "vertical_on_mobile": true
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "gap": 24,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
-            "project_1": {
-              "type": "project-card"
+            "card_1": {
+              "type": "project-card",
+              "settings": {
+                "title": "Cras Fermentum Sem",
+                "subtitle": "Stationary",
+                "image_ratio": "1 / 1"
+              }
             },
-            "project_2": {
-              "type": "project-card"
+            "card_2": {
+              "type": "project-card",
+              "settings": {
+                "title": "Mollis Ipsum Mattis",
+                "subtitle": "Magazine, Book",
+                "image_ratio": "1 / 1"
+              }
             },
-            "project_3": {
-              "type": "project-card"
+            "card_3": {
+              "type": "project-card",
+              "settings": {
+                "title": "Ipsum Ultricies Cursus",
+                "subtitle": "Packaging",
+                "image_ratio": "1 / 1"
+              }
             }
           },
-          "block_order": ["project_1", "project_2", "project_3"]
+          "block_order": ["card_1", "card_2", "card_3"]
+        },
+        "row_2": {
+          "type": "group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "gap": 24,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "card_4": {
+              "type": "project-card",
+              "settings": {
+                "title": "Inceptos Euismod Egestas",
+                "subtitle": "Stationary, Branding",
+                "image_ratio": "1 / 1"
+              }
+            },
+            "card_5": {
+              "type": "project-card",
+              "settings": {
+                "title": "Ipsum Mollis Vulputate",
+                "subtitle": "Packaging",
+                "image_ratio": "1 / 1"
+              }
+            },
+            "card_6": {
+              "type": "project-card",
+              "settings": {
+                "title": "Porta Ornare Cras",
+                "subtitle": "Branding",
+                "image_ratio": "1 / 1"
+              }
+            }
+          },
+          "block_order": ["card_4", "card_5", "card_6"]
+        },
+        "cta_button": {
+          "type": "button",
+          "settings": {
+            "label": "Start a Project",
+            "style_class": "button",
+            "width": "fit-content",
+            "width_mobile": "fit-content"
+          }
         }
       },
-      "block_order": ["heading", "projects_row"],
+      "block_order": ["our_projects_label", "main_heading", "row_1", "row_2", "cta_button"],
       "settings": {
         "content_direction": "column",
-        "gap": 24,
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "vertical_on_mobile": true,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-start",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "color_scheme": "scheme-projects",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "padding-block-start": 72,
+        "padding-block-end": 72
       }
     },
     "benefits_Bn2kP5": {
