@@ -455,6 +455,16 @@
           "selected_variant_hover_text_color": "#ffffff",
           "selected_variant_hover_border_color": "#1a1a1a"
         }
+      },
+      "scheme-promo-bar": {
+        "settings": {
+          "background": "#972c02",
+          "foreground_heading": "#ffffff",
+          "foreground": "#ffffffcf",
+          "primary": "#ffffff",
+          "secondary": "#ffffffcf",
+          "border": "#ffffff33"
+        }
       }
     },
     "logo_height": 36,

@@ -17,7 +17,7 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "10% Off for New Users. <strong><a href=\"/collections/all\">View details</a></strong>",
             "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
@@ -35,10 +35,10 @@
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-promo-bar",
         "divider_width": 1,
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "padding-block-start": 8,
+        "padding-block-end": 8
       }
     },
     "header_section": {

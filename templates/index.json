@@ -1,5 +1,62 @@
 {
   "sections": {
+    "navigation_Mc4nX6": {
+      "type": "section",
+      "blocks": {
+        "btn_on_the_menu": {
+          "type": "button",
+          "settings": {
+            "label": "ON THE MENU",
+            "link": "",
+            "open_in_new_tab": false,
+            "style_class": "link",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          }
+        },
+        "btn_sourcing": {
+          "type": "button",
+          "settings": {
+            "label": "SOURCING",
+            "link": "",
+            "open_in_new_tab": false,
+            "style_class": "link",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "btn_on_the_menu",
+        "btn_sourcing"
+      ],
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 100,
+        "section_width": "page-width",
+        "section_height": "small",
+        "color_scheme": "scheme-1",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "padding-block-start": 8,
+        "padding-block-end": 8
+      }
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -153,7 +210,10 @@
                   }
                 }
               },
-              "block_order": ["card_dining_image", "card_dining_label"],
+              "block_order": [
+                "card_dining_image",
+                "card_dining_label"
+              ],
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -218,7 +278,10 @@
                   }
                 }
               },
-              "block_order": ["card_living_image", "card_living_label"],
+              "block_order": [
+                "card_living_image",
+                "card_living_label"
+              ],
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -283,7 +346,10 @@
                   }
                 }
               },
-              "block_order": ["card_bedroom_image", "card_bedroom_label"],
+              "block_order": [
+                "card_bedroom_image",
+                "card_bedroom_label"
+              ],
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -314,7 +380,11 @@
               }
             }
           },
-          "block_order": ["card_dining", "card_living", "card_bedroom"],
+          "block_order": [
+            "card_dining",
+            "card_living",
+            "card_bedroom"
+          ],
           "settings": {
             "content_direction": "row",
             "vertical_on_mobile": true,
@@ -345,7 +415,11 @@
           }
         }
       },
-      "block_order": ["browse_heading", "browse_subtitle", "cards_row"],
+      "block_order": [
+        "browse_heading",
+        "browse_subtitle",
+        "cards_row"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -733,10 +807,20 @@
               }
             }
           },
-          "block_order": ["logo_1", "logo_2", "logo_3", "logo_4", "logo_5", "logo_6"]
+          "block_order": [
+            "logo_1",
+            "logo_2",
+            "logo_3",
+            "logo_4",
+            "logo_5",
+            "logo_6"
+          ]
         }
       },
-      "block_order": ["heading_text_pL1", "logo_grid_gR2"],
+      "block_order": [
+        "heading_text_pL1",
+        "logo_grid_gR2"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -827,7 +911,9 @@
                   }
                 }
               },
-              "block_order": ["text"]
+              "block_order": [
+                "text"
+              ]
             },
             "row_return_policy": {
               "type": "_accordion-row",
@@ -856,7 +942,9 @@
                   }
                 }
               },
-              "block_order": ["text"]
+              "block_order": [
+                "text"
+              ]
             },
             "row_exchanges": {
               "type": "_accordion-row",
@@ -885,7 +973,9 @@
                   }
                 }
               },
-              "block_order": ["text"]
+              "block_order": [
+                "text"
+              ]
             },
             "row_international_shipping": {
               "type": "_accordion-row",
@@ -896,7 +986,7 @@
                 "text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We ship to most countries worldwide. International orders typically take 7–14 business days for delivery. Please note that import duties and taxes may apply and are the responsibility of the recipient.</p>",
+                    "text": "<p>We ship to most countries worldwide. International orders typically take 7\u201314 business days for delivery. Please note that import duties and taxes may apply and are the responsibility of the recipient.</p>",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
                     "font_size": "",
@@ -914,13 +1004,23 @@
                   }
                 }
               },
-              "block_order": ["text"]
+              "block_order": [
+                "text"
+              ]
             }
           },
-          "block_order": ["row_shipping_times", "row_return_policy", "row_exchanges", "row_international_shipping"]
+          "block_order": [
+            "row_shipping_times",
+            "row_return_policy",
+            "row_exchanges",
+            "row_international_shipping"
+          ]
         }
       },
-      "block_order": ["heading_text", "accordion"],
+      "block_order": [
+        "heading_text",
+        "accordion"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -965,7 +1065,7 @@
         "spectrum_description": {
           "type": "text",
           "settings": {
-            "text": "<p>Discover our curated palette — four signature colorways designed to complement every moment, every mood, every you.</p>",
+            "text": "<p>Discover our curated palette \u2014 four signature colorways designed to complement every moment, every mood, every you.</p>",
             "width": "100%",
             "max_width": "narrow",
             "alignment": "center",
@@ -1030,7 +1130,11 @@
                   }
                 }
               },
-              "block_order": ["card_1_image", "card_1_name", "card_1_desc"],
+              "block_order": [
+                "card_1_image",
+                "card_1_name",
+                "card_1_desc"
+              ],
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -1109,7 +1213,11 @@
                   }
                 }
               },
-              "block_order": ["card_2_image", "card_2_name", "card_2_desc"],
+              "block_order": [
+                "card_2_image",
+                "card_2_name",
+                "card_2_desc"
+              ],
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -1188,7 +1296,11 @@
                   }
                 }
               },
-              "block_order": ["card_3_image", "card_3_name", "card_3_desc"],
+              "block_order": [
+                "card_3_image",
+                "card_3_name",
+                "card_3_desc"
+              ],
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -1267,7 +1379,11 @@
                   }
                 }
               },
-              "block_order": ["card_4_image", "card_4_name", "card_4_desc"],
+              "block_order": [
+                "card_4_image",
+                "card_4_name",
+                "card_4_desc"
+              ],
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -1298,7 +1414,12 @@
               }
             }
           },
-          "block_order": ["card_1", "card_2", "card_3", "card_4"],
+          "block_order": [
+            "card_1",
+            "card_2",
+            "card_3",
+            "card_4"
+          ],
           "settings": {
             "content_direction": "row",
             "vertical_on_mobile": true,
@@ -1342,7 +1463,12 @@
           }
         }
       },
-      "block_order": ["spectrum_heading", "spectrum_description", "cards_row", "spectrum_button"],
+      "block_order": [
+        "spectrum_heading",
+        "spectrum_description",
+        "cards_row",
+        "spectrum_button"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -1390,7 +1516,11 @@
           }
         }
       },
-      "block_order": ["heading_our_story", "subtext_our_story", "button_our_story"],
+      "block_order": [
+        "heading_our_story",
+        "subtext_our_story",
+        "button_our_story"
+      ],
       "settings": {
         "media_type_1": "image",
         "media_type_2": "image",
@@ -1436,7 +1566,11 @@
           }
         }
       },
-      "block_order": ["member_1", "member_2", "member_3"],
+      "block_order": [
+        "member_1",
+        "member_2",
+        "member_3"
+      ],
       "settings": {
         "heading": "Meet Our Team",
         "heading_tag": "h2",
@@ -1492,7 +1626,10 @@
               }
             }
           },
-          "block_order": ["milestone_1_year", "milestone_1_desc"]
+          "block_order": [
+            "milestone_1_year",
+            "milestone_1_desc"
+          ]
         },
         "milestone_2": {
           "type": "group",
@@ -1524,7 +1661,10 @@
               }
             }
           },
-          "block_order": ["milestone_2_year", "milestone_2_desc"]
+          "block_order": [
+            "milestone_2_year",
+            "milestone_2_desc"
+          ]
         },
         "milestone_3": {
           "type": "group",
@@ -1556,10 +1696,18 @@
               }
             }
           },
-          "block_order": ["milestone_3_year", "milestone_3_desc"]
+          "block_order": [
+            "milestone_3_year",
+            "milestone_3_desc"
+          ]
         }
       },
-      "block_order": ["milestones_heading", "milestone_1", "milestone_2", "milestone_3"],
+      "block_order": [
+        "milestones_heading",
+        "milestone_1",
+        "milestone_2",
+        "milestone_3"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -1629,7 +1777,10 @@
                   }
                 }
               },
-              "block_order": ["heading", "text"]
+              "block_order": [
+                "heading",
+                "text"
+              ]
             },
             "button": {
               "type": "button",
@@ -1640,7 +1791,11 @@
               }
             }
           },
-          "block_order": ["caption", "group", "button"]
+          "block_order": [
+            "caption",
+            "group",
+            "button"
+          ]
         }
       }
     },
@@ -1738,7 +1893,11 @@
               }
             }
           },
-          "block_order": ["caption", "main_group", "button"]
+          "block_order": [
+            "caption",
+            "main_group",
+            "button"
+          ]
         }
       }
     },
@@ -1807,7 +1966,10 @@
                   }
                 }
               },
-              "block_order": ["heading", "body"]
+              "block_order": [
+                "heading",
+                "body"
+              ]
             },
             "button": {
               "type": "button",
@@ -1819,7 +1981,11 @@
               }
             }
           },
-          "block_order": ["caption", "main_group", "button"]
+          "block_order": [
+            "caption",
+            "main_group",
+            "button"
+          ]
         }
       }
     },
@@ -1912,7 +2078,11 @@
               }
             }
           },
-          "block_order": ["card_1", "card_2", "card_3"]
+          "block_order": [
+            "card_1",
+            "card_2",
+            "card_3"
+          ]
         },
         "row_2": {
           "type": "group",
@@ -1964,7 +2134,11 @@
               }
             }
           },
-          "block_order": ["card_4", "card_5", "card_6"]
+          "block_order": [
+            "card_4",
+            "card_5",
+            "card_6"
+          ]
         },
         "cta_button": {
           "type": "button",
@@ -1976,7 +2150,13 @@
           }
         }
       },
-      "block_order": ["our_projects_label", "main_heading", "row_1", "row_2", "cta_button"],
+      "block_order": [
+        "our_projects_label",
+        "main_heading",
+        "row_1",
+        "row_2",
+        "cta_button"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -2100,7 +2280,10 @@
                   }
                 }
               },
-              "block_order": ["benefit_1_title", "benefit_1_desc"]
+              "block_order": [
+                "benefit_1_title",
+                "benefit_1_desc"
+              ]
             },
             "benefit_2": {
               "type": "group",
@@ -2158,7 +2341,10 @@
                   }
                 }
               },
-              "block_order": ["benefit_2_title", "benefit_2_desc"]
+              "block_order": [
+                "benefit_2_title",
+                "benefit_2_desc"
+              ]
             },
             "benefit_3": {
               "type": "group",
@@ -2216,13 +2402,23 @@
                   }
                 }
               },
-              "block_order": ["benefit_3_title", "benefit_3_desc"]
+              "block_order": [
+                "benefit_3_title",
+                "benefit_3_desc"
+              ]
             }
           },
-          "block_order": ["benefit_1", "benefit_2", "benefit_3"]
+          "block_order": [
+            "benefit_1",
+            "benefit_2",
+            "benefit_3"
+          ]
         }
       },
-      "block_order": ["main_heading", "benefits_row"],
+      "block_order": [
+        "main_heading",
+        "benefits_row"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -2473,7 +2669,12 @@
               }
             }
           },
-          "block_order": ["heading", "body", "button", "address"]
+          "block_order": [
+            "heading",
+            "body",
+            "button",
+            "address"
+          ]
         },
         "image": {
           "type": "image",
@@ -2482,7 +2683,10 @@
           }
         }
       },
-      "block_order": ["group", "image"],
+      "block_order": [
+        "group",
+        "image"
+      ],
       "settings": {
         "content_direction": "row",
         "gap": 32,
@@ -2493,6 +2697,7 @@
     }
   },
   "order": [
+    "navigation_Mc4nX6",
     "hero_jVaWmY",
     "browse_the_range_Bx7mN4",
     "product_list_fa6P9H",
