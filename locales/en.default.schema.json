@@ -418,7 +418,8 @@
     "comparison_slider": "Comparison slider",
     "team_grid": "Team grid",
     "team_member": "Team member",
-    "protein_tabs": "Protein tabs"
+    "protein_tabs": "Protein tabs",
+    "bestsellers_tabs": "Bestsellers tabs"
   },
   "options": {
     "above_carousel": "Above carousel",
@@ -1190,6 +1191,33 @@
           "description": "Description",
           "button_text": "Button text",
           "button_url": "Button link"
+        }
+      }
+    },
+    "bestsellers_tabs": {
+      "settings": {
+        "shop_all_label": {
+          "label": "Shop all label"
+        },
+        "header_badge": "Badge",
+        "badge_text": {
+          "label": "Badge text"
+        },
+        "badge_tag": {
+          "label": "Badge tag",
+          "info": "Show badge only on products with this tag. Leave empty to show on all products."
+        },
+        "badge_color": {
+          "label": "Badge color"
+        },
+        "button_label": {
+          "label": "Button label"
+        }
+      },
+      "blocks": {
+        "bestseller_tab": {
+          "name": "Tab",
+          "tab_label": "Label"
         }
       }
     }
