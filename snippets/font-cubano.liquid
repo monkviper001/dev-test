@@ -1,0 +1,16 @@
+{% doc %}
+  Cubano custom font declaration.
+  Self-hosted on Shopify CDN.
+  Requires assets/cubano-400.woff2 to be present in the theme assets.
+
+  @example {%- render 'font-cubano' -%}
+{% enddoc %}
+<style>
+  @font-face {
+    font-family: 'Cubano';
+    src: url('{{ "cubano-400.woff2" | asset_url }}') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>

@@ -2181,12 +2181,19 @@
       "type": "section",
       "blocks": {
         "main_heading": {
+          "type": "custom-liquid",
+          "settings": {
+            "custom_liquid": "<h2 style=\"font-family: 'Cubano', var(--font-heading--family); font-weight: 400; font-size: 2rem; text-align: center; color: rgb(var(--color-foreground));\">WHY GOOD CHOP?</h2>"
+          }
+        },
+        "intro_text": {
           "type": "text",
           "settings": {
-            "text": "<h2>Benefits for your expediency</h2>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "type_preset": "h2",
+            "text": "<p>In the past three years, meat and seafood prices in U.S. have gone up significantly. Our base plan prices have stayed the same since 2021.</p>",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "rte",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -2198,11 +2205,11 @@
           "settings": {
             "content_direction": "row",
             "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
+            "horizontal_alignment": "space-between",
             "vertical_alignment": "flex-start",
-            "horizontal_alignment_flex_direction_column": "flex-start",
+            "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 100,
+            "gap": 40,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -2229,7 +2236,7 @@
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
-                "horizontal_alignment_flex_direction_column": "flex-start",
+                "horizontal_alignment_flex_direction_column": "center",
                 "vertical_alignment_flex_direction_column": "flex-start",
                 "gap": 8,
                 "width": "fill",
@@ -2256,9 +2263,10 @@
                 "benefit_1_title": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Payment Method</p>",
-                    "width": "fit-content",
+                    "text": "<h3>Outstanding Value</h3>",
+                    "width": "100%",
                     "max_width": "normal",
+                    "alignment": "center",
                     "type_preset": "h4",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -2269,9 +2277,10 @@
                 "benefit_1_desc": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We offer flexible payment options, to make easier.</p>",
-                    "width": "fit-content",
+                    "text": "<p>Inflation-resistant pricing, members-only savings, and more.</p>",
+                    "width": "100%",
                     "max_width": "normal",
+                    "alignment": "center",
                     "type_preset": "rte",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -2290,7 +2299,7 @@
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
-                "horizontal_alignment_flex_direction_column": "flex-start",
+                "horizontal_alignment_flex_direction_column": "center",
                 "vertical_alignment_flex_direction_column": "flex-start",
                 "gap": 8,
                 "width": "fill",
@@ -2317,9 +2326,10 @@
                 "benefit_2_title": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Return policy</p>",
-                    "width": "fit-content",
+                    "text": "<h3>100% American</h3>",
+                    "width": "100%",
                     "max_width": "normal",
+                    "alignment": "center",
                     "type_preset": "h4",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -2330,9 +2340,10 @@
                 "benefit_2_desc": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>You can return a product within 30 days.</p>",
-                    "width": "fit-content",
+                    "text": "<p>Proteins sourced from independent American farms and fisheries.</p>",
+                    "width": "100%",
                     "max_width": "normal",
+                    "alignment": "center",
                     "type_preset": "rte",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -2351,7 +2362,7 @@
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
-                "horizontal_alignment_flex_direction_column": "flex-start",
+                "horizontal_alignment_flex_direction_column": "center",
                 "vertical_alignment_flex_direction_column": "flex-start",
                 "gap": 8,
                 "width": "fill",
@@ -2378,9 +2389,10 @@
                 "benefit_3_title": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Customer Support</p>",
-                    "width": "fit-content",
+                    "text": "<h3>Convenient Deliveries</h3>",
+                    "width": "100%",
                     "max_width": "normal",
+                    "alignment": "center",
                     "type_preset": "h4",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -2391,9 +2403,10 @@
                 "benefit_3_desc": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Our customer support is 24/7.</p>",
-                    "width": "fit-content",
+                    "text": "<p>Flexible, fully customizable deliveries every 4, 6, or 8 weeks.</p>",
+                    "width": "100%",
                     "max_width": "normal",
+                    "alignment": "center",
                     "type_preset": "rte",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -2406,27 +2419,92 @@
                 "benefit_3_title",
                 "benefit_3_desc"
               ]
+            },
+            "benefit_4": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 8,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "benefit_4_title": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h3>Money-back Guarantee</h3>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "center",
+                    "type_preset": "h4",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                },
+                "benefit_4_desc": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>No commitments—skip, reschedule, or cancel anytime.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "center",
+                    "type_preset": "rte",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": [
+                "benefit_4_title",
+                "benefit_4_desc"
+              ]
             }
           },
           "block_order": [
             "benefit_1",
             "benefit_2",
-            "benefit_3"
+            "benefit_3",
+            "benefit_4"
           ]
         }
       },
       "block_order": [
         "main_heading",
+        "intro_text",
         "benefits_row"
       ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
-        "horizontal_alignment_flex_direction_column": "flex-start",
+        "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 32,
+        "gap": 40,
         "section_width": "page-width",
-        "section_height": "small",
+        "section_height": "",
         "color_scheme": "scheme-2",
         "background_media": "none",
         "video_position": "cover",
@@ -2435,8 +2513,8 @@
         "border_width": 1,
         "border_opacity": 100,
         "border_radius": 0,
-        "padding-block-start": 100,
-        "padding-block-end": 100
+        "padding-block-start": 64,
+        "padding-block-end": 64
       }
     },
     "product_list_best_sellers_Xk9mN2": {
