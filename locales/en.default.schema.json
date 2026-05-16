@@ -1220,6 +1220,23 @@
           "tab_label": "Label"
         }
       }
+    },
+    "product_recommendations": {
+      "settings": {
+        "header_badge": "Badge",
+        "badge_text": {
+          "label": "Badge text"
+        },
+        "badge_color": {
+          "label": "Badge color"
+        },
+        "button_label": {
+          "label": "Button label"
+        },
+        "show_quantity_selector": {
+          "label": "Show quantity selector"
+        }
+      }
     }
   }
 }
