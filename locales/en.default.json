@@ -329,6 +329,9 @@
     },
     "project_card": {
       "view_project": "View project"
+    },
+    "protein_tabs": {
+      "tab_navigation": "Product category tabs"
     }
   },
   "products": {

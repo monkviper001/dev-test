@@ -417,7 +417,8 @@
     "pills": "Pills",
     "comparison_slider": "Comparison slider",
     "team_grid": "Team grid",
-    "team_member": "Team member"
+    "team_member": "Team member",
+    "protein_tabs": "Protein tabs"
   },
   "options": {
     "above_carousel": "Above carousel",
@@ -1177,6 +1178,18 @@
           "name": "Name",
           "role": "Role",
           "bio": "Bio"
+        }
+      }
+    },
+    "protein_tabs": {
+      "blocks": {
+        "protein_tab": {
+          "name": "Protein tab",
+          "tab_label": "Tab label",
+          "subheading": "Subheading",
+          "description": "Description",
+          "button_text": "Button text",
+          "button_url": "Button link"
         }
       }
     }

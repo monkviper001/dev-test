@@ -1,0 +1,499 @@
+{%- liquid
+  assign section_id = 'ProteinTabs-' | append: section.id
+  assign heading = section.settings.heading
+  assign heading_tag = section.settings.heading_tag
+-%}
+
+{%- render 'font-cubano' -%}
+
+<protein-tabs>
+  <div class="section-background color-{{ section.settings.color_scheme }}"></div>
+  <section
+    id="{{ section_id }}"
+    class="protein-tabs section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
+    style="
+      padding-block-start: {{ section.settings.padding-block-start }}px;
+      padding-block-end: {{ section.settings.padding-block-end }}px;
+    "
+  >
+    {%- if heading != blank -%}
+      <{{ heading_tag }} class="protein-tabs__heading">
+        {{- heading | escape -}}
+      </{{ heading_tag }}>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div
+        class="protein-tabs__nav"
+        role="tablist"
+        aria-label="{{ 'sections.protein_tabs.tab_navigation' | t }}"
+      >
+        {%- for block in section.blocks -%}
+          <button
+            class="protein-tabs__tab{% if forloop.first %} protein-tabs__tab--active{% endif %}"
+            role="tab"
+            id="Tab-{{ section.id }}-{{ forloop.index }}"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-controls="Panel-{{ section.id }}-{{ forloop.index }}"
+            tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+          >
+            {{- block.settings.tab_label | escape -}}
+          </button>
+        {%- endfor -%}
+      </div>
+
+      <div class="protein-tabs__panels">
+        {%- for block in section.blocks -%}
+          <div
+            class="protein-tabs__panel{% if forloop.first %} protein-tabs__panel--active{% endif %}"
+            role="tabpanel"
+            id="Panel-{{ section.id }}-{{ forloop.index }}"
+            aria-labelledby="Tab-{{ section.id }}-{{ forloop.index }}"
+            {% unless forloop.first %}hidden{% endunless %}
+            {{ block.shopify_attributes }}
+          >
+            <div class="protein-tabs__content">
+              {%- if block.settings.subheading != blank -%}
+                <h3 class="protein-tabs__subheading">
+                  {{- block.settings.subheading | escape -}}
+                </h3>
+              {%- endif -%}
+
+              {%- if block.settings.description != blank -%}
+                <div class="protein-tabs__description rte">
+                  {{ block.settings.description }}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.button_text != blank -%}
+                <a
+                  href="{{ block.settings.button_url | default: '#' }}"
+                  class="protein-tabs__cta button"
+                >
+                  {{- block.settings.button_text | escape -}}
+                </a>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.image != blank -%}
+              <div class="protein-tabs__image">
+                {{
+                  block.settings.image
+                  | image_url: width: 800
+                  | image_tag:
+                    class: 'protein-tabs__img',
+                    sizes: '(min-width: 992px) 50vw, 100vw',
+                    widths: '300, 400, 500, 600, 800',
+                    alt: block.settings.tab_label
+                }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </section>
+</protein-tabs>
+
+{% stylesheet %}
+  protein-tabs {
+    display: block;
+    position: relative;
+  }
+
+  .protein-tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-2xl);
+  }
+
+  .protein-tabs__heading {
+    font-family: 'Cubano', var(--font-heading--family);
+    font-size: var(--font-size--2xl);
+    line-height: var(--line-height--heading-normal);
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-foreground-heading);
+    margin: 0;
+    max-width: 48rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .protein-tabs__heading {
+      font-size: var(--font-size--3xl);
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .protein-tabs__heading {
+      font-size: var(--font-size--4xl);
+    }
+  }
+
+  .protein-tabs__nav {
+    display: flex;
+    gap: var(--gap-xl);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .protein-tabs__tab {
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--sm);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-foreground);
+    background: none;
+    border: none;
+    border-block-end: 2px solid transparent;
+    padding-block: var(--padding-xs);
+    padding-inline: var(--padding-2xs);
+    cursor: pointer;
+    transition: border-color var(--animation-speed) var(--animation-easing);
+    min-height: var(--minimum-touch-target);
+  }
+
+  .protein-tabs__tab:hover {
+    border-block-end-color: rgb(var(--color-foreground-rgb) / var(--opacity-35-55));
+  }
+
+  .protein-tabs__tab--active {
+    font-weight: 700;
+    border-block-end-color: var(--color-foreground);
+  }
+
+  .protein-tabs__tab:focus-visible {
+    outline: var(--focus-outline-width) solid var(--color-foreground);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  .protein-tabs__panels {
+    width: 100%;
+  }
+
+  .protein-tabs__panel {
+    display: none;
+    gap: var(--gap-2xl);
+    padding-block-start: var(--padding-xl);
+  }
+
+  .protein-tabs__panel--active {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 768px) {
+    .protein-tabs__panel--active {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .protein-tabs__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    align-items: flex-start;
+  }
+
+  .protein-tabs__subheading {
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight, 700);
+    font-size: var(--font-size--xl);
+    line-height: var(--line-height--heading-normal);
+    color: var(--color-foreground-heading);
+    margin: 0;
+  }
+
+  .protein-tabs__description {
+    font-size: var(--font-size--md);
+    line-height: var(--line-height--body-normal);
+    color: var(--color-foreground);
+    max-width: 42rem;
+  }
+
+  .protein-tabs__cta {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .protein-tabs__image {
+    overflow: hidden;
+    border-radius: var(--style-border-radius-md);
+  }
+
+  .protein-tabs__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .protein-tabs__tab {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  import { Component } from '@theme/component';
+
+  class ProteinTabs extends Component {
+    connectedCallback() {
+      super.connectedCallback();
+      this.#bindEvents();
+    }
+
+    #bindEvents() {
+      /** @type {NodeListOf<HTMLButtonElement>} */
+      const tabs = this.querySelectorAll('[role="tab"]');
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', this.#handleTabClick.bind(this));
+        tab.addEventListener('keydown', this.#handleKeyDown.bind(this));
+      });
+    }
+
+    /**
+     * @param {MouseEvent} event
+     */
+    #handleTabClick(event) {
+      const clickedTab = event.currentTarget;
+      this.#activateTab(clickedTab);
+    }
+
+    /**
+     * @param {KeyboardEvent} event
+     */
+    #handleKeyDown(event) {
+      /** @type {NodeListOf<HTMLButtonElement>} */
+      const tabs = this.querySelectorAll('[role="tab"]');
+      const tabsArray = Array.from(tabs);
+      const currentIndex = tabsArray.indexOf(event.currentTarget);
+
+      let targetIndex;
+
+      switch (event.key) {
+        case 'ArrowRight':
+          targetIndex = (currentIndex + 1) % tabsArray.length;
+          break;
+        case 'ArrowLeft':
+          targetIndex = (currentIndex - 1 + tabsArray.length) % tabsArray.length;
+          break;
+        case 'Home':
+          targetIndex = 0;
+          break;
+        case 'End':
+          targetIndex = tabsArray.length - 1;
+          break;
+        default:
+          return;
+      }
+
+      event.preventDefault();
+      this.#activateTab(tabsArray[targetIndex]);
+      tabsArray[targetIndex].focus();
+    }
+
+    /**
+     * @param {HTMLButtonElement} selectedTab
+     */
+    #activateTab(selectedTab) {
+      /** @type {NodeListOf<HTMLButtonElement>} */
+      const tabs = this.querySelectorAll('[role="tab"]');
+      /** @type {NodeListOf<HTMLElement>} */
+      const panels = this.querySelectorAll('[role="tabpanel"]');
+
+      tabs.forEach((tab) => {
+        const isSelected = tab === selectedTab;
+        tab.setAttribute('aria-selected', String(isSelected));
+        tab.setAttribute('tabindex', isSelected ? '0' : '-1');
+        tab.classList.toggle('protein-tabs__tab--active', isSelected);
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.id === selectedTab.getAttribute('aria-controls');
+        panel.hidden = !isActive;
+        panel.classList.toggle('protein-tabs__panel--active', isActive);
+      });
+    }
+
+    disconnectedCallback() {
+      super.disconnectedCallback();
+    }
+  }
+
+  customElements.define('protein-tabs', ProteinTabs);
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:names.protein_tabs",
+  "tag": "div",
+  "class": "protein-tabs-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "High-quality proteins without the high cost"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "t:settings.heading_tag",
+      "options": [
+        { "value": "h2", "label": "t:options.h2" },
+        { "value": "h3", "label": "t:options.h3" },
+        { "value": "h4", "label": "t:options.h4" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        { "value": "page-width", "label": "t:options.page" },
+        { "value": "full-width", "label": "t:options.full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "protein_tab",
+      "name": "t:sections.protein_tabs.blocks.protein_tab.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "t:sections.protein_tabs.blocks.protein_tab.tab_label",
+          "default": "Tab"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "t:sections.protein_tabs.blocks.protein_tab.subheading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "t:sections.protein_tabs.blocks.protein_tab.description"
+        },
+        {
+          "type": "header",
+          "content": "t:content.buttons"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "t:sections.protein_tabs.blocks.protein_tab.button_text"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "t:sections.protein_tabs.blocks.protein_tab.button_url"
+        },
+        {
+          "type": "header",
+          "content": "t:content.image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:settings.image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.protein_tabs",
+      "category": "t:categories.products",
+      "settings": {
+        "heading": "High-quality proteins without the high cost",
+        "heading_tag": "h2",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 80,
+        "padding-block-end": 80
+      },
+      "blocks": [
+        {
+          "type": "protein_tab",
+          "settings": {
+            "tab_label": "Beef",
+            "subheading": "Steakhouse-quality beef",
+            "description": "<p>We're proud to deliver responsibly raised beef offerings born and bred right here in the U.S.A. We serve Angus breeds for optimal marbling, flavor, and tenderness with premium options including USDA Prime, 100% Grass-Fed, and Wagyu.</p>",
+            "button_text": "Shop Beef"
+          }
+        },
+        {
+          "type": "protein_tab",
+          "settings": {
+            "tab_label": "Poultry",
+            "subheading": "Farm-fresh poultry",
+            "description": "<p>Our poultry is sourced from trusted farms committed to humane practices. Enjoy tender, flavorful chicken and turkey raised without antibiotics or added hormones.</p>",
+            "button_text": "Shop Poultry"
+          }
+        },
+        {
+          "type": "protein_tab",
+          "settings": {
+            "tab_label": "Pork",
+            "subheading": "Premium heritage pork",
+            "description": "<p>Discover our selection of heritage breed pork, raised on small family farms. Rich in flavor and marbling, our pork delivers the quality you deserve at every meal.</p>",
+            "button_text": "Shop Pork"
+          }
+        },
+        {
+          "type": "protein_tab",
+          "settings": {
+            "tab_label": "Seafood",
+            "subheading": "Wild-caught seafood",
+            "description": "<p>From ocean to table, our seafood is wild-caught and sustainably sourced. Enjoy the freshest salmon, shrimp, and more delivered straight to your door.</p>",
+            "button_text": "Shop Seafood"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
