@@ -2772,6 +2772,227 @@
         "padding-block-end": 40,
         "color_scheme": "scheme-physical-store"
       }
+    },
+    "faq_section_Pk8mN3": {
+      "type": "section",
+      "blocks": {
+        "faq_heading": {
+          "type": "custom-liquid",
+          "settings": {
+            "custom_liquid": "<h2 style=\"font-family: 'Cubano', var(--font-heading--family); font-weight: 400; font-size: 2rem; text-align: center; text-transform: uppercase; color: rgb(var(--color-foreground));\">Frequently Asked Questions</h2>"
+          }
+        },
+        "faq_accordion": {
+          "type": "accordion",
+          "settings": {
+            "icon": "caret",
+            "dividers": true,
+            "type_preset": "h5",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "accordion_row_1": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Why should I choose Good Chop?",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_1": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>All our meats are domestic, born, bred and raised right here in the USA. And our fish is wild caught off US coasts or sustainably raised in US farms. The quality of our steaks matches some of the best steakhouses of the country, while the taste and sustainability of our fish is better than what you can find in most seafood restaurants. With over 80 carefully selected products, we offer one of the widest selection of meats and seafood, and the best thing is that you can fully customize your box as you see fit. Our products are all natural, free of artificial ingredients and preservatives, and minimally processed.</p><p>Some of our most popular products include: USDA Choice ribeyes, thick-cut uncured bacon, chicken breasts, wild-caught Alaskan salmon, porterhouse steak, lamb chops, crab legs.</p>",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["text_1"]
+            },
+            "accordion_row_2": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Can I choose what comes in my box?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_1": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Yes! You can fully customize your box to include your favorite cuts and proteins. With over 80 products to choose from, you have complete flexibility to build your perfect box.</p>",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["text_1"]
+            },
+            "accordion_row_3": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Where does your meat and seafood come from?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_1": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>All our meat is domestic — born, bred, and raised right here in the USA. Our seafood is wild caught off US coasts or sustainably raised in US farms. We never source internationally.</p>",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["text_1"]
+            },
+            "accordion_row_4": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "How can I trust the delivery process?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_1": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Your order is packed with dry ice and insulated liners designed to keep your meat and seafood frozen throughout delivery. We ship with trusted carriers and ensure every box arrives in perfect condition.</p>",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["text_1"]
+            },
+            "accordion_row_5": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Is there a satisfaction guarantee?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_1": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Absolutely. If you are ever unsatisfied with your order, we will make it right — whether that means a replacement, a credit, or a refund. Your satisfaction is our top priority.</p>",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["text_1"]
+            }
+          },
+          "block_order": [
+            "accordion_row_1",
+            "accordion_row_2",
+            "accordion_row_3",
+            "accordion_row_4",
+            "accordion_row_5"
+          ]
+        }
+      },
+      "block_order": ["faq_heading", "faq_accordion"],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 64,
+        "section_width": "page-width",
+        "section_height": "",
+        "color_scheme": "scheme-1",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "padding-block-start": 80,
+        "padding-block-end": 80
+      }
     }
   },
   "order": [
@@ -2791,6 +3012,7 @@
     "shipping_returns_faq_Rx4mKe",
     "projects_grid_Ab1cD2",
     "benefits_Bn2kP5",
-    "physical_store_Xm5kL8"
+    "physical_store_Xm5kL8",
+    "faq_section_Pk8mN3"
   ]
 }
