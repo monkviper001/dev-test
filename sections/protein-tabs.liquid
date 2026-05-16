@@ -174,9 +174,13 @@
   }
 
   .protein-tabs__panel {
-    display: none;
     gap: var(--gap-2xl);
     padding-block-start: var(--padding-xl);
+  }
+
+  /* Hide inactive panels — use :not() so specificity beats any cascade-order issue */
+  .protein-tabs__panel:not(.protein-tabs__panel--active) {
+    display: none;
   }
 
   .protein-tabs__panel--active {
@@ -326,7 +330,9 @@
     }
   }
 
-  customElements.define('protein-tabs', ProteinTabs);
+  if (!customElements.get('protein-tabs')) {
+    customElements.define('protein-tabs', ProteinTabs);
+  }
 {% endjavascript %}
 
 {% schema %}
